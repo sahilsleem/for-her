@@ -1,0 +1,309 @@
+/**
+ * Scrapbook & Polaroid Photo Gallery Stylesheet
+ */
+
+/* Scrapbook Main Container */
+.scrapbook-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Featured Large Polaroid */
+.featured-photo-wrapper {
+  max-width: 480px;
+  margin: 0 auto 1.5rem auto;
+  position: relative;
+}
+
+/* Polaroid Base Frame */
+.polaroid-frame {
+  background: #FFFFFF;
+  padding: 1rem 1rem 1.6rem 1rem;
+  border-radius: 4px;
+  box-shadow: var(--shadow-polaroid);
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  cursor: pointer;
+  border: 1px solid rgba(220, 200, 200, 0.4);
+}
+
+.polaroid-frame:hover, .polaroid-frame:focus-visible {
+  transform: translateY(-6px) scale(1.02) rotate(0deg) !important;
+  box-shadow: 0 18px 40px rgba(102, 18, 33, 0.18), 0 4px 10px rgba(0, 0, 0, 0.06);
+  z-index: 10;
+  outline: none;
+}
+
+.polaroid-featured {
+  padding: 1.25rem 1.25rem 2rem 1.25rem;
+  transform: rotate(-1.2deg);
+}
+
+/* Polaroid Image Box */
+.polaroid-photo-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: #F3EAE7;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.polaroid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.polaroid-frame:hover .polaroid-img {
+  transform: scale(1.04);
+}
+
+/* Hover / Touch Hint Badge */
+.polaroid-view-badge {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(6px);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-handwritten);
+  font-size: 0.95rem;
+  color: var(--rose-dark);
+  border: 1px solid var(--border-delicate);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: var(--transition-smooth);
+}
+
+.polaroid-frame:hover .polaroid-view-badge,
+.polaroid-frame:focus-visible .polaroid-view-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (hover: none) {
+  .polaroid-view-badge {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+}
+
+/* Polaroid Handwritten Footer */
+.polaroid-footer {
+  margin-top: 1.15rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.polaroid-title {
+  font-family: var(--font-handwritten);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--cherry-deep);
+  line-height: 1.2;
+}
+
+.polaroid-caption {
+  font-size: 0.88rem;
+  color: var(--text-soft);
+  line-height: 1.45;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.polaroid-date {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* Washi Tape Effect */
+.polaroid-washi {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 26px;
+  opacity: 0.82;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  z-index: 5;
+  pointer-events: none;
+  /* jagged tape edges */
+  mask-image: linear-gradient(to right, transparent, black 6px, black calc(100% - 6px), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6px, black calc(100% - 6px), transparent);
+}
+
+.washi-1 {
+  background: rgba(247, 181, 195, 0.75); /* blush rose */
+  transform: translateX(-50%) rotate(-3deg);
+}
+.washi-2 {
+  background: rgba(227, 235, 220, 0.8); /* sage green */
+  transform: translateX(-50%) rotate(2.5deg);
+}
+.washi-3 {
+  background: rgba(254, 224, 206, 0.8); /* warm peach */
+  transform: translateX(-50%) rotate(-1.8deg);
+}
+.washi-4 {
+  background: rgba(239, 232, 252, 0.8); /* soft lavender */
+  transform: translateX(-50%) rotate(3.2deg);
+}
+
+/* Scrapbook Polaroids Grid */
+.scrapbook-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem 1.75rem;
+  align-items: start;
+}
+
+/* Natural scrapbook tilt rotation variations */
+.scrapbook-col-1 .polaroid-frame {
+  transform: rotate(-1.8deg);
+}
+.scrapbook-col-2 .polaroid-frame {
+  transform: rotate(2deg);
+}
+.scrapbook-col-3 .polaroid-frame {
+  transform: rotate(-1.2deg);
+}
+
+@media (max-width: 640px) {
+  .scrapbook-grid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+    margin: 0 auto;
+    gap: 2.25rem;
+  }
+  .scrapbook-col-1 .polaroid-frame,
+  .scrapbook-col-2 .polaroid-frame,
+  .scrapbook-col-3 .polaroid-frame {
+    transform: rotate(0deg);
+  }
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(45, 20, 26, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 2500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-content {
+  background: #FFFFFF;
+  max-width: 520px;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  position: relative;
+  transform: scale(0.92);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.lightbox-modal.active .lightbox-content {
+  transform: scale(1);
+}
+
+.lightbox-image-wrapper {
+  background: #F7EFE9;
+  position: relative;
+  max-height: 60vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-image-wrapper img {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-caption-area {
+  padding: 1.25rem 1.5rem 1.5rem 1.5rem;
+  text-align: center;
+}
+
+.lightbox-title {
+  font-family: var(--font-handwritten);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--cherry-deep);
+  margin-bottom: 0.3rem;
+}
+
+.lightbox-caption {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  line-height: 1.5;
+  margin-bottom: 0.4rem;
+}
+
+.lightbox-date {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--rose-primary);
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  color: var(--cherry-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  z-index: 10;
+  transition: var(--transition-smooth);
+}
+
+.lightbox-close-btn:hover {
+  background: var(--blush-200);
+  transform: rotate(90deg);
+}

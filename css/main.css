@@ -1,0 +1,301 @@
+/**
+ * Main Stylesheet - Romantic Theme & Layout
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Color Palette */
+  --bg-base: #FAF7F5;
+  --bg-card: #FFFFFF;
+  --bg-card-soft: #FFF9FA;
+  --bg-warm: #FBF4F0;
+  
+  --blush-100: #FFF0F3;
+  --blush-200: #FFE3E8;
+  --blush-300: #FCD2DA;
+  --blush-400: #F7B5C3;
+  --rose-primary: #D6788B;
+  --rose-dark: #B85368;
+  --cherry-accent: #932238;
+  --cherry-deep: #661221;
+
+  --text-main: #362927;
+  --text-soft: #635350;
+  --text-muted: #8C7A77;
+  --text-light: #B8A8A5;
+
+  --border-delicate: rgba(214, 120, 139, 0.22);
+  --border-dashed: rgba(184, 83, 104, 0.35);
+
+  --shadow-soft: 0 4px 20px rgba(184, 83, 104, 0.08);
+  --shadow-medium: 0 8px 30px rgba(147, 34, 56, 0.12);
+  --shadow-polaroid: 0 10px 28px rgba(90, 40, 50, 0.14), 0 2px 6px rgba(0, 0, 0, 0.04);
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-handwritten: 'Caveat', cursive, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --transition-smooth: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.68;
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  /* Subtle paper grain texture */
+  background-image: 
+    radial-gradient(var(--blush-200) 0.6px, transparent 0.6px),
+    radial-gradient(var(--blush-300) 0.6px, var(--bg-base) 0.6px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Floating Petals Canvas */
+#petals-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99;
+}
+
+/* Selection & Scrollbar */
+::selection {
+  background: var(--blush-300);
+  color: var(--cherry-deep);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--blush-400);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rose-primary);
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, .serif-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--cherry-deep);
+  line-height: 1.25;
+}
+
+.handwritten {
+  font-family: var(--font-handwritten);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--text-soft);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Site Visibility Transitions */
+.site-hidden {
+  display: none !important;
+}
+
+.site-revealed {
+  animation: fadeInSite 0.8s ease forwards;
+}
+
+@keyframes fadeInSite {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Layout Containers */
+.container {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section-wrapper {
+  padding: 4.5rem 0;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section-wrapper {
+    padding: 3.25rem 0;
+  }
+}
+
+/* Section Header Styling */
+.section-header {
+  text-align: center;
+  margin-bottom: 2.75rem;
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-handwritten);
+  font-size: 1.35rem;
+  color: var(--rose-primary);
+  background: var(--blush-100);
+  border: 1px dashed var(--rose-primary);
+  padding: 0.2rem 1.1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.65rem;
+  transform: rotate(-1.5deg);
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 2.85rem);
+  color: var(--cherry-deep);
+  margin-bottom: 0.6rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-soft);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* Sticky Ambient Control Bar */
+.ambient-bar {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.ambient-pill-btn {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-delicate);
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-main);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.ambient-pill-btn:hover {
+  background: #FFFFFF;
+  border-color: var(--rose-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.ambient-pill-btn.playing {
+  border-color: var(--rose-primary);
+  background: var(--blush-100);
+  color: var(--cherry-accent);
+}
+
+.ambient-pill-btn.active {
+  background: var(--blush-100);
+  color: var(--cherry-accent);
+}
+
+@media (max-width: 480px) {
+  .ambient-pill-btn span.label-text {
+    display: none;
+  }
+  .ambient-pill-btn {
+    padding: 0.55rem 0.75rem;
+  }
+}
+
+/* Toast Notification */
+.love-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--cherry-deep);
+  color: #FFFFFF;
+  padding: 0.9rem 1.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 10px 30px rgba(102, 18, 33, 0.35);
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+  max-width: 90%;
+}
+
+.love-toast.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  #petals-canvas {
+    display: none !important;
+  }
+}

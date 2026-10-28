@@ -1,0 +1,16 @@
+{
+  "name": "a-little-universe-for-my-girlfriend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A complete, mobile-first romantic website built with love for my girlfriend ♡",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node -e \"const fs = require('fs'); fs.cpSync('assets', 'dist/assets', {recursive: true});\"",
+    "preview": "vite preview",
+    "serve": "npx serve ."
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.16.0",
+    "vite": "^5.4.11"
+  }
+}

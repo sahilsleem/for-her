@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#FAF7F5">
+  <meta name="description" content="A little universe made with love for my favourite person ♡">
+  <title>for my favourite person ♡</title>
+
+  <!-- Sweet Heart Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💌</text></svg>">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/scrapbook.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Floating Falling Petals & Hearts Canvas -->
+  <canvas id="petals-canvas" aria-hidden="true"></canvas>
+
+  <!-- Floating Ambient Controls (Sticky Top Right) -->
+  <nav class="ambient-bar" aria-label="Audio and visual controls">
+    <button id="music-toggle-btn" class="ambient-pill-btn" aria-label="Toggle ambient romantic music" title="Toggle gentle romantic music">
+      <span id="music-icon" aria-hidden="true">🎵</span>
+      <span id="music-label" class="label-text">play music ♡</span>
+    </button>
+    <button id="petals-toggle-btn" class="ambient-pill-btn active" aria-label="Toggle falling petals" title="Toggle falling petals" aria-pressed="true">
+      <span aria-hidden="true">🌸</span>
+      <span class="label-text">petals</span>
+    </button>
+  </nav>
+
+  <!-- =========================================================================
+       1. OPENING SURPRISE SCREEN
+       ========================================================================= -->
+  <section id="intro-screen" class="intro-screen" aria-label="Morning surprise welcome">
+    <div class="intro-content">
+      <div id="intro-envelope" class="intro-envelope-wrapper" role="button" tabindex="0" aria-label="Tap to open the letter">
+        <div class="envelope-box">
+          <div class="envelope-flap"></div>
+          <div class="envelope-heart-seal" aria-hidden="true">💌</div>
+        </div>
+      </div>
+
+      <span class="intro-tag">a quiet morning gift for you</span>
+      <h1 class="intro-title">hey, my favourite person ♡</h1>
+      <p class="intro-subtitle">
+        I made a little something for you. Take your time with it, okay?
+      </p>
+
+      <button id="open-surprise-btn" class="btn-romantic-primary" aria-label="Open your little surprise">
+        <span>open your little surprise</span>
+        <span aria-hidden="true">♡</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       MAIN SITE (UNVEILED AFTER OPENING)
+       ========================================================================= -->
+  <main id="main-site" class="site-hidden">
+
+    <!-- -----------------------------------------------------------------------
+         2. THE MAIN LOVE LETTER
+         ----------------------------------------------------------------------- -->
+    <section id="love-letter" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">straight from my heart</span>
+          <h2 class="section-title">a letter for you this morning</h2>
+          <p class="section-subtitle">read this slowly, before anything else in your day begins</p>
+        </div>
+
+        <article class="letter-parchment">
+          <div class="letter-top-badge">
+            <span class="letter-date-stamp">for my girl &bull; today & always</span>
+          </div>
+
+          <div class="letter-content-text">
+            <p class="lead-paragraph">
+              Good morning, my love.
+            </p>
+            <p>
+              If you are reading this, you’ve probably just woken up—rubbing your eyes, maybe wrapping yourself in your blanket for five extra minutes before the world asks for your energy. Before your phone fills up with notifications or your mind races to today’s to-do list, I wanted this little space to be waiting for you.
+            </p>
+            <p>
+              I want to start with something honest and important: <strong>I am really sorry.</strong> Lately, I have not been giving you enough time. Between work, obligations, and letting myself get pulled in too many directions, I haven't been as present as you deserve. And I know that when I become distant or distracted, it doesn’t just mean fewer phone calls—it can make you feel unseen, unvalued, or like you’re carrying the emotional weight of us on your own.
+            </p>
+            <p>
+              I hate that I ever made you feel that way. You never deserve the leftover scraps of my energy at the end of an exhausting day. You deserve a boyfriend who looks up from his screen, who listens to what you’re feeling without being in a rush, who remembers the little things you mention in passing, and who actively carves out sacred, uninterrupted time for the two of us.
+            </p>
+            <p>
+              This website isn’t an excuse, and I don’t expect a single gesture or pretty sentences to instantly fix the days I let slip by. Real care isn't proven by a big gesture when you're hurt—it’s proven by consistency, by checking in on your heart, by keeping promises, and by showing up every ordinary Tuesday just as much as on special days.
+            </p>
+            <p>
+              I made this little universe for you so that whenever you look at it, you’re reminded of how deeply noticed, cherished, and important you are to me. Take your time wandering through it. Every word here was written thinking of you.
+            </p>
+          </div>
+
+          <div class="letter-signature-block">
+            <div>
+              <div class="signature-text">with all my love,</div>
+              <!-- EDIT HERE: You can replace "[your name]" with your actual name -->
+              <div class="signature-note">always yours, Sahil ♡</div>
+            </div>
+            <div class="wax-seal-mini" title="Sealed with love" aria-hidden="true">
+              ♡
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         3. OUR PHOTO SCRAPBOOK
+         ----------------------------------------------------------------------- -->
+    <section id="scrapbook" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">little paused moments</span>
+          <h2 class="section-title">our photo scrapbook ♡</h2>
+          <p class="section-subtitle">
+            A few memories that remind me how lucky I am to be walking through this life with you.
+          </p>
+        </div>
+
+        <div class="scrapbook-container">
+          <!-- Featured Large Polaroid -->
+          <div class="featured-photo-wrapper">
+            <div id="featured-photo-card">
+              <!-- Rendered dynamically by app.js with fallback -->
+            </div>
+          </div>
+
+          <!-- Scrapbook Polaroids Grid -->
+          <div id="scrapbook-grid" class="scrapbook-grid">
+            <!-- Polaroids dynamically inserted by app.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         4. A COLLECTION OF LOVE NOTES
+         ----------------------------------------------------------------------- -->
+    <section id="love-notes" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">things i keep in my heart</span>
+          <h2 class="section-title">a collection of love notes</h2>
+          <p class="section-subtitle">
+            Because one page could never hold everything I want to tell you.
+          </p>
+        </div>
+
+        <div class="notes-grid">
+          <!-- 1. The little things I love about you -->
+          <article class="note-card">
+            <div class="note-pin pin-gold" aria-hidden="true"></div>
+            <div class="note-header">
+              <span class="note-icon" aria-hidden="true">🌸</span>
+              <h3 class="note-title">the little things I love about you</h3>
+            </div>
+            <div class="note-body">
+              <p>
+                It’s never just the big things. It’s the sweet, quiet habits you probably don’t even realize you have. The way your voice softens when you’re sleepy. The cute face you make when you're trying to hide that you found my dumb joke funny.
+              </p>
+              <p>
+                It’s how your hand instinctively reaches for mine when we walk beside each other, and how you tuck yourself under my arm like you were designed to fit there. Those tiny, unscripted moments are my favorite parts of living.
+              </p>
+            </div>
+          </article>
+
+          <!-- 2. Things about you that I hope you never stop seeing -->
+          <article class="note-card">
+            <div class="note-pin pin-berry" aria-hidden="true"></div>
+            <div class="note-header">
+              <span class="note-icon" aria-hidden="true">✨</span>
+              <h3 class="note-title">things I hope you never stop seeing in yourself</h3>
+            </div>
+            <div class="note-body">
+              <p>
+                On days when you feel exhausted or critical of yourself, I wish I could give you my perspective for just a few minutes. I see a woman who carries incredible kindness, who gives so much of her warmth to everyone around her.
+              </p>
+              <p>
+                I see someone with rare resilience—capable, intelligent, and deeply genuine. Never let a tough week or self-doubt trick you into forgetting how extraordinary you are.
+              </p>
+            </div>
+          </article>
+
+          <!-- 3. The comfort you bring me -->
+          <article class="note-card">
+            <div class="note-pin pin-sage" aria-hidden="true"></div>
+            <div class="note-header">
+              <span class="note-icon" aria-hidden="true">☕</span>
+              <h3 class="note-title">the comfort you bring me</h3>
+            </div>
+            <div class="note-body">
+              <p>
+                The world can be loud, chaotic, and demanding, but being near you quiets everything down. When I’ve had the longest day and my thoughts are running in circles, just hearing your voice or having your head on my chest brings a stillness I can’t find anywhere else.
+              </p>
+              <p>
+                You are my calm harbor. Home isn't an address or a set of walls for me—it’s wherever you are.
+              </p>
+            </div>
+          </article>
+
+          <!-- 4. Things I might not say often enough -->
+          <article class="note-card">
+            <div class="note-pin pin-gold" aria-hidden="true"></div>
+            <div class="note-header">
+              <span class="note-icon" aria-hidden="true">💌</span>
+              <h3 class="note-title">things I might not say often enough</h3>
+            </div>
+            <div class="note-body">
+              <p>
+                Thank you for being in my corner. Thank you for your patience with me, even when I have been foolish, quiet, or preoccupied. Thank you for making ordinary days feel memorable simply by sharing them with me.
+              </p>
+              <p>
+                I don’t ever want you to wonder whether I see how much you bring into my life. I notice it every day, and I am grateful for you more than words can express.
+              </p>
+            </div>
+          </article>
+
+          <!-- 5. Little everyday moments I want more of -->
+          <article class="note-card">
+            <div class="note-pin pin-berry" aria-hidden="true"></div>
+            <div class="note-header">
+              <span class="note-icon" aria-hidden="true">☀️</span>
+              <h3 class="note-title">little everyday moments I want more of</h3>
+            </div>
+            <div class="note-body">
+              <p>
+                I don’t need extravagant holidays to be happy with you. What I want is more slow Sunday mornings where neither of us has to set an alarm. I want to make you breakfast, bring you warm tea just the way you like it, and sit together talking about everything and nothing.
+              </p>
+              <p>
+                I want comfortable silences where we just read or work side by side, knowing that the best person in the world is sitting right next to me.
+              </p>
+            </div>
+          </article>
+
+          <!-- 6. Why I choose to make room for us -->
+          <article class="note-card">
+            <div class="note-pin pin-sage" aria-hidden="true"></div>
+            <div class="note-header">
+              <span class="note-icon" aria-hidden="true">🌱</span>
+              <h3 class="note-title">why I choose to make room for us</h3>
+            </div>
+            <div class="note-body">
+              <p>
+                You are not an obligation to be squeezed into the gaps of a busy schedule. You are the reason the work is worth doing in the first place. Making deliberate time for us isn’t a chore or a compromise—it is the best part of my week.
+              </p>
+              <p>
+                I choose you when life is easy, and I choose you when life is overwhelming. You are my priority, and I am putting my actions behind that truth.
+              </p>
+            </div>
+          </article>
+
+          <!-- 7. Things I want us to experience together -->
+          <article class="note-card">
+            <div class="note-pin pin-gold" aria-hidden="true"></div>
+            <div class="note-header">
+              <span class="note-icon" aria-hidden="true">🌌</span>
+              <h3 class="note-title">things I want us to experience together</h3>
+            </div>
+            <div class="note-body">
+              <p>
+                There are so many places I want to discover with you. Stargazing far away from city lights, wrapped up in a thick blanket. Spontaneous road trips where we stop at weird roadside diners and laugh until our ribs ache.
+              </p>
+              <p>
+                Cooking new recipes together that might turn out terrible, but won’t matter because we’ll just end up ordering pizza and eating it on the floor. I want a lifetime of memories with you.
+              </p>
+            </div>
+          </article>
+
+          <!-- 8. What I want you to remember on a difficult day -->
+          <article class="note-card">
+            <div class="note-pin pin-berry" aria-hidden="true"></div>
+            <div class="note-header">
+              <span class="note-icon" aria-hidden="true">🤍</span>
+              <h3 class="note-title">what to remember on a difficult day</h3>
+            </div>
+            <div class="note-body">
+              <p>
+                When everything feels heavy and you feel like you aren't doing enough, please remember: your worth is not measured by productivity or perfection. You are allowed to take a break. You are allowed to be vulnerable.
+              </p>
+              <p>
+                You never have to pretend to be cheerful around me. My arms will always be a safe shelter where you can take off your armor and just be.
+              </p>
+            </div>
+          </article>
+
+          <!-- 9. A letter for when you miss me -->
+          <article class="note-card">
+            <div class="note-pin pin-sage" aria-hidden="true"></div>
+            <div class="note-header">
+              <span class="note-icon" aria-hidden="true">🕊️</span>
+              <h3 class="note-title">a letter for when you miss me</h3>
+            </div>
+            <div class="note-body">
+              <p>
+                Whenever miles or busy hours stand between us, remember that distance is only physical. In every quiet thought, in every playlist I listen to, in every little thing that makes me smile throughout my day, you are right there with me.
+              </p>
+              <p>
+                Whenever you feel lonely, look at this screen, read these words, and know that you are held tightly in my heart every single second.
+              </p>
+            </div>
+          </article>
+
+          <!-- 10. A letter for when you need reassurance -->
+          <article class="note-card">
+            <div class="note-pin pin-gold" aria-hidden="true"></div>
+            <div class="note-header">
+              <span class="note-icon" aria-hidden="true">🛡️</span>
+              <h3 class="note-title">a letter for when you need reassurance</h3>
+            </div>
+            <div class="note-body">
+              <p>
+                If your mind ever whispers that you are asking for too much or that I might slip away: let me quiet that fear immediately. You are not a burden. Asking for love, time, and attention is the bare minimum you deserve.
+              </p>
+              <p>
+                My affection for you isn't temporary or fickle. I am here, I am listening, and I am in this with you with my whole heart.
+              </p>
+            </div>
+          </article>
+
+          <!-- 11. A final letter just for you (Featured full card) -->
+          <article class="note-card note-featured">
+            <div class="note-pin pin-berry" aria-hidden="true"></div>
+            <div class="note-header">
+              <span class="note-icon" aria-hidden="true">👑</span>
+              <h3 class="note-title">a final note just for you</h3>
+            </div>
+            <div class="note-body">
+              <p>
+                Out of eight billion people wandering across this planet, with all their different paths and stories, my favorite thing that ever happened was meeting you.
+              </p>
+              <p>
+                You have brought so much color, warmth, and gentleness into my world. Thank you for being my girlfriend, my best friend, and my favorite part of every day. I love you, completely and without hesitation.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         5. INTERACTIVE SURPRISES
+         ----------------------------------------------------------------------- -->
+    <section id="interactive-surprises" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">interactive little joys</span>
+          <h2 class="section-title">little surprises made for you ♡</h2>
+          <p class="section-subtitle">
+            Tap, explore, and open each of these whenever you need a smile.
+          </p>
+        </div>
+
+        <!-- A. Reasons I love you generator -->
+        <div class="reasons-deck-wrapper" style="margin-bottom: 4rem;">
+          <div class="section-header" style="margin-bottom: 1.5rem;">
+            <span class="handwritten" style="font-size: 1.4rem; color: var(--rose-primary);">Reason Jar ♡</span>
+            <h3 class="serif-title" style="font-size: 2rem;">reasons why I adore you</h3>
+          </div>
+
+          <div id="reasons-card" class="reasons-card">
+            <span id="reason-counter" class="reason-counter-badge">reason #1 of 45 ♡</span>
+            <p id="current-reason-text" class="reason-quote-text">
+              Loading a sweet reason...
+            </p>
+            <button id="next-reason-btn" class="btn-secondary-romantic" aria-label="Show another reason I love you">
+              <span>give me another reason</span>
+              <span aria-hidden="true">✨</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- B. Open When Envelopes Grid -->
+        <div style="margin-bottom: 4rem;">
+          <div class="section-header" style="margin-bottom: 1.75rem;">
+            <span class="handwritten" style="font-size: 1.4rem; color: var(--rose-primary);">Sealed for you ♡</span>
+            <h3 class="serif-title" style="font-size: 2rem;">"open when..." letters</h3>
+            <p class="section-subtitle">Letters written for specific moments. Tap an envelope to break the seal.</p>
+          </div>
+
+          <div id="open-when-grid" class="open-when-grid">
+            <!-- Dynamically populated by app.js from OPEN_WHEN_LETTERS -->
+          </div>
+        </div>
+
+        <!-- C. A Tiny Promise Card -->
+        <div class="promise-card-wrapper" style="margin-bottom: 4rem;">
+          <div class="section-header" style="margin-bottom: 1.5rem;">
+            <span class="handwritten" style="font-size: 1.4rem; color: var(--rose-primary);">From me to you ♡</span>
+            <h3 class="serif-title" style="font-size: 2rem;">a tiny promise</h3>
+          </div>
+
+          <div class="promise-card">
+            <p style="font-size: 1.15rem; color: var(--cherry-deep); font-weight: 500;">
+              Words mean nothing without actions. Here is my personal pledge to you:
+            </p>
+
+            <div class="promise-list">
+              <label class="promise-item">
+                <input type="checkbox" checked class="promise-checkbox">
+                <span>To put my phone away and give you my undivided attention when we talk.</span>
+              </label>
+              <label class="promise-item">
+                <input type="checkbox" checked class="promise-checkbox">
+                <span>To plan deliberate dates so you don't have to carry the burden of making every decision.</span>
+              </label>
+              <label class="promise-item">
+                <input type="checkbox" checked class="promise-checkbox">
+                <span>To check in on how your heart is doing, not just ask "how was your day."</span>
+              </label>
+              <label class="promise-item">
+                <input type="checkbox" checked class="promise-checkbox">
+                <span>To give you long, warm hugs without looking at the clock.</span>
+              </label>
+              <label class="promise-item">
+                <input type="checkbox" checked class="promise-checkbox">
+                <span>To follow through with consistent effort every single week, not just after a mistake.</span>
+              </label>
+            </div>
+
+            <div id="wax-seal-stamp" class="wax-seal-interactive" role="button" tabindex="0" title="Tap to stamp and seal this promise" aria-label="Stamp wax seal on promise">
+              ♡
+            </div>
+            <div id="seal-status-text" class="seal-status-text">tap the seal to lock in my promise ♡</div>
+            <button id="seal-promise-btn" class="btn-secondary-romantic">
+              <span>seal this promise with my whole heart</span>
+              <span aria-hidden="true">💌</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- D. Little things I want to do with you (Interactive Date Checklist) -->
+        <div class="date-bucket-wrapper" style="margin-bottom: 4rem;">
+          <div class="section-header" style="margin-bottom: 1.5rem;">
+            <span class="handwritten" style="font-size: 1.4rem; color: var(--rose-primary);">Our Future Memories ♡</span>
+            <h3 class="serif-title" style="font-size: 2rem;">little things I want to do with you</h3>
+            <p class="section-subtitle">Check off dates we want to do, or type your own dream date below!</p>
+          </div>
+
+          <div class="date-list-header">
+            <span class="handwritten" style="font-size: 1.2rem; color: var(--text-soft);">our interactive date bucket list</span>
+            <span id="date-selected-counter" class="date-counter-badge">0 memory ideas checked ♡</span>
+          </div>
+
+          <div id="date-list-container" class="date-list-box">
+            <!-- Dynamically populated from localStorage/data.js -->
+          </div>
+
+          <form id="add-date-form" class="add-date-form">
+            <input type="text" id="new-date-input" class="add-date-input" placeholder="Have an idea? Add a date you want us to do..." required>
+            <button type="submit" class="btn-add-date">
+              <span>Add to our list</span>
+              <span aria-hidden="true">♡</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- E. "One last thing..." Secret Voucher Reveal -->
+        <div class="secret-coupon-wrapper">
+          <div class="section-header" style="margin-bottom: 1.5rem;">
+            <span class="handwritten" style="font-size: 1.4rem; color: var(--rose-primary);">A final surprise ♡</span>
+            <h3 class="serif-title" style="font-size: 2rem;">one last thing...</h3>
+          </div>
+
+          <div class="secret-coupon-box">
+            <button id="reveal-coupon-btn" class="btn-romantic-primary">
+              <span>tap to break the ribbon & see your surprise</span>
+              <span aria-hidden="true">🎀</span>
+            </button>
+
+            <div id="secret-reveal-content" class="hidden-coupon">
+              <div class="coupon-ticket">
+                <span class="ticket-header">The Uninterrupted Date Voucher</span>
+                <span class="ticket-badge">✦ Officially issued by your boyfriend ✦</span>
+                <div class="ticket-body">
+                  <p>
+                    <strong>This certificate entitles you to:</strong><br>
+                    One full evening (or entire day) completely planned around you. No phones on the table, no work emails, no rushing. Dinner at your favorite spot, whatever dessert you want, and my 100% undivided attention.
+                  </p>
+                </div>
+                <div class="ticket-fineprint">
+                  Redeemable anytime you want. Never expires. No terms or conditions. Just you and me. ♡
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         6. THE ENDING SECTION
+         ----------------------------------------------------------------------- -->
+    <section id="ending" class="ending-section">
+      <div class="container">
+        <div class="ending-quote-card">
+          <p class="ending-quote">
+            "no website could ever fit all the love i have for you in it. but this is a little piece of my heart, made just for you. ♡"
+          </p>
+
+          <p class="ending-apology-text">
+            I love you more than words, websites, or gestures can express. I am truly sorry for having been so busy lately, and I want to spend proper, uninterrupted time with you this week. Let me take you out, or let me just come over and make you dinner while you relax.
+          </p>
+
+          <p class="ending-invitation">
+            Whenever you wake up and see this, you don't owe me any big reaction—just let me know you're awake so I can wish you a good morning in person. ♡
+          </p>
+
+          <div class="ending-buttons-group">
+            <button id="send-morning-text-btn" class="btn-romantic-primary">
+              <span>send a sleepy good morning text</span>
+              <span aria-hidden="true">💌</span>
+            </button>
+            <button id="send-virtual-hug-btn" class="btn-secondary-romantic">
+              <span>send a virtual hug</span>
+              <span aria-hidden="true">🫂</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="footer-credits">
+          made with all my love, specifically for you ♡
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       MODALS & OVERLAYS
+       ========================================================================= -->
+
+  <!-- "Open When" Letter Modal -->
+  <div id="letter-modal" class="letter-modal" role="dialog" aria-modal="true" aria-labelledby="letter-modal-title">
+    <div class="letter-modal-dialog">
+      <button id="letter-modal-close" class="letter-modal-close-btn" aria-label="Close letter">&times;</button>
+      <h3 id="letter-modal-title" class="letter-modal-title">Letter Title</h3>
+      <div id="letter-modal-body" class="letter-modal-body">
+        <!-- Injected via app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Enlarged photo preview">
+    <div class="lightbox-content">
+      <button id="lightbox-close" class="lightbox-close-btn" aria-label="Close photo preview">&times;</button>
+      <div class="lightbox-image-wrapper">
+        <img id="lightbox-img" src="" alt="Enlarged polaroid memory">
+      </div>
+      <div class="lightbox-caption-area">
+        <h4 id="lightbox-title" class="lightbox-title">Photo title</h4>
+        <p id="lightbox-caption" class="lightbox-caption">Photo caption text</p>
+        <span id="lightbox-date" class="lightbox-date">Date stamp</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Pill -->
+  <div id="love-toast" class="love-toast" role="status" aria-live="polite"></div>
+
+  <!-- JavaScript Module -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

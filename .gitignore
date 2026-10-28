@@ -1,0 +1,14 @@
+# Build output
+dist/
+
+# Dependencies
+node_modules/
+.npm/
+
+# Test artifacts
+test_screenshots_*.png
+
+# Environment & OS
+.DS_Store
+Thumbs.db
+*.log
