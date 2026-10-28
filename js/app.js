@@ -57,11 +57,10 @@ function initOpeningSurprise() {
       introScreen.classList.add('fade-out');
       mainSite.classList.remove('site-hidden');
       mainSite.classList.add('site-revealed');
+      window.scrollTo(0, 0);
 
       setTimeout(() => {
         introScreen.style.display = 'none';
-        // Smooth scroll to top of main content
-        window.scrollTo({ top: 0, behavior: 'smooth' });
       }, 700);
     }, 600);
   };
@@ -631,12 +630,57 @@ function initAngerManagementCentre() {
     }));
   };
 
-  bonkBtn.addEventListener('click', triggerBonk);
-  photoFrame.addEventListener('click', triggerBonk);
+  // Helper to reliably trigger actions on mobile touch and desktop click
+  const bindMobileTap = (el, callback) => {
+    if (!el) return;
+    let startX = 0;
+    let startY = 0;
+    let isScroll = false;
+    let lastTriggerTime = 0;
+
+    const trigger = (e) => {
+      const now = Date.now();
+      if (now - lastTriggerTime < 350) return;
+      lastTriggerTime = now;
+      callback(e);
+    };
+
+    el.addEventListener('touchstart', (e) => {
+      if (e.touches && e.touches.length > 0) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        isScroll = false;
+      }
+    }, { passive: true });
+
+    el.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches.length > 0) {
+        const dx = Math.abs(e.touches[0].clientX - startX);
+        const dy = Math.abs(e.touches[0].clientY - startY);
+        if (dx > 10 || dy > 10) {
+          isScroll = true;
+        }
+      }
+    }, { passive: true });
+
+    el.addEventListener('touchend', (e) => {
+      if (!isScroll) {
+        e.preventDefault();
+        trigger(e);
+      }
+    }, { passive: false });
+
+    el.addEventListener('click', (e) => {
+      trigger(e);
+    });
+  };
+
+  bindMobileTap(bonkBtn, triggerBonk);
+  bindMobileTap(photoFrame, triggerBonk);
 
   // 4. Surrender button
   if (surrenderBtn && surrenderCard) {
-    surrenderBtn.addEventListener('click', () => {
+    bindMobileTap(surrenderBtn, () => {
       surrenderCard.classList.remove('hidden-element');
       surrenderCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
@@ -652,7 +696,7 @@ function initAngerManagementCentre() {
 
   // 5. Forgive button
   if (forgiveBtn && forgiveResponse) {
-    forgiveBtn.addEventListener('click', () => {
+    bindMobileTap(forgiveBtn, () => {
       forgiveResponse.classList.remove('hidden-element');
       forgiveBtn.style.display = 'none';
 
