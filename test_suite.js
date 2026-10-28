@@ -5,7 +5,8 @@ import path from 'path';
 const CHROME_PATH = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
 
 async function runTests() {
-  console.log('🚀 Starting Automated Test Suite on http://localhost:8080 ...');
+  const targetUrl = process.argv[2] || 'http://localhost:8080/';
+  console.log(`🚀 Starting Automated Test Suite on ${targetUrl} ...`);
 
   const browser = await puppeteer.launch({
     executablePath: CHROME_PATH,
@@ -35,7 +36,7 @@ async function runTests() {
     consoleErrors.push(err.toString());
   });
 
-  await page.goto('http://localhost:8080/', { waitUntil: 'networkidle0' });
+  await page.goto(targetUrl, { waitUntil: 'networkidle0' });
 
   console.log('✓ Page loaded cleanly.');
 
