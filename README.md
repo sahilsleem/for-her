@@ -53,6 +53,7 @@ Open the `assets/photos/` folder and drop in your real photos with these filenam
 | `couple-4.jpg` | "Being completely silly" | Portrait or Square (4:5) |
 | `couple-5.jpg` | "Golden hour magic" | Portrait or Square (4:5) |
 | `couple-6.jpg` | "Holding your hand" | Portrait or Square (4:5) |
+| `boyfriend.jpg` | "baccha's anger management centre 🔨" | Square or Portrait (1:1 / 4:5) |
 
 *Note: If any photograph is omitted or missing, the website automatically falls back to an illustrated romantic vector placeholder so the layout never breaks.*
 

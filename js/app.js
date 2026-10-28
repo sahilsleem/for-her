@@ -4,6 +4,7 @@
 
 import {
   ROMANTIC_CONFIG,
+  BONK_MESSAGES,
   REASONS_I_LOVE_YOU,
   OPEN_WHEN_LETTERS,
   DATE_BUCKET_LIST,
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPromiseSeal();
   initDateBucketList();
   initPhotoScrapbook();
+  initAngerManagementCentre();
   initSecretCoupon();
   initFinalActions();
 });
@@ -522,6 +524,174 @@ function initPhotoScrapbook() {
       closeLightbox();
     }
   });
+}
+
+/**
+ * 7.5 BACCHA'S ANGER MANAGEMENT CENTRE 🔨
+ */
+function initAngerManagementCentre() {
+  const bonkBtn = document.getElementById('bonk-btn');
+  const surrenderBtn = document.getElementById('surrender-btn');
+  const forgiveBtn = document.getElementById('forgive-btn');
+  const forgiveResponse = document.getElementById('forgive-response');
+  const surrenderCard = document.getElementById('surrender-card');
+  const hammerEl = document.getElementById('cartoon-hammer');
+  const photoFrame = document.getElementById('boyfriend-photo-frame');
+  const photoImg = document.getElementById('boyfriend-photo-img');
+  const quoteText = document.getElementById('speech-quote-text');
+  const counterText = document.getElementById('bonk-counter-text');
+  const soundCheckbox = document.getElementById('bonk-sound-checkbox');
+  const soundStatus = document.getElementById('bonk-sound-status');
+  const sparkLayer = document.getElementById('impact-burst-layer');
+
+  if (!bonkBtn || !photoFrame) return;
+
+  // 1. Photo initialization
+  if (photoImg) {
+    if (ROMANTIC_CONFIG.hasBoyfriendPhoto) {
+      photoImg.src = 'assets/photos/boyfriend.jpg';
+    } else {
+      photoImg.src = 'assets/photos/placeholder-boyfriend.svg';
+    }
+
+    photoImg.addEventListener('error', () => {
+      if (!photoImg.src.endsWith('placeholder-boyfriend.svg')) {
+        photoImg.src = 'assets/photos/placeholder-boyfriend.svg';
+      }
+    });
+  }
+
+  // 2. Sound state (Default is OFF)
+  let soundEnabled = false;
+  if (soundCheckbox) {
+    soundCheckbox.checked = false;
+    soundCheckbox.addEventListener('change', () => {
+      soundEnabled = soundCheckbox.checked;
+      if (soundStatus) {
+        soundStatus.textContent = soundEnabled ? 'on' : 'off';
+      }
+      if (soundEnabled && romanticAudio) {
+        romanticAudio.playPop();
+      }
+    });
+  }
+
+  // 3. Bonk interaction
+  let bonkCount = 0;
+  let lastIdx = -1;
+
+  const triggerBonk = () => {
+    bonkCount++;
+    if (counterText) {
+      counterText.textContent = `bonks received by this dumb chicken: ${bonkCount}`;
+    }
+
+    // Play random bonk message
+    if (BONK_MESSAGES && BONK_MESSAGES.length > 0) {
+      let nextIdx = Math.floor(Math.random() * BONK_MESSAGES.length);
+      if (nextIdx === lastIdx && BONK_MESSAGES.length > 1) {
+        nextIdx = (nextIdx + 1) % BONK_MESSAGES.length;
+      }
+      lastIdx = nextIdx;
+      if (quoteText) {
+        quoteText.style.opacity = '0';
+        quoteText.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          quoteText.textContent = `"${BONK_MESSAGES[nextIdx]}"`;
+          quoteText.style.opacity = '1';
+          quoteText.style.transform = 'scale(1)';
+        }, 120);
+      }
+    }
+
+    // Cartoon hammer swing animation
+    if (hammerEl) {
+      hammerEl.classList.remove('hammer-strike');
+      void hammerEl.offsetWidth; // force reflow
+      hammerEl.classList.add('hammer-strike');
+    }
+
+    // Photo squash & stretch wobble
+    photoFrame.classList.remove('photo-squished');
+    void photoFrame.offsetWidth;
+    photoFrame.classList.add('photo-squished');
+
+    // Spawn cartoon stars & hearts over his head
+    spawnBonkSparks(sparkLayer);
+
+    // Optional cartoon bonk sound
+    if (soundEnabled && romanticAudio) {
+      romanticAudio.playCartoonBonk();
+    }
+
+    // Celebratory hearts around the area
+    const rect = photoFrame.getBoundingClientRect();
+    window.dispatchEvent(new CustomEvent('celebrateHearts', {
+      detail: { x: rect.left + rect.width / 2, y: rect.top + 30, count: 8 }
+    }));
+  };
+
+  bonkBtn.addEventListener('click', triggerBonk);
+  photoFrame.addEventListener('click', triggerBonk);
+
+  // 4. Surrender button
+  if (surrenderBtn && surrenderCard) {
+    surrenderBtn.addEventListener('click', () => {
+      surrenderCard.classList.remove('hidden-element');
+      surrenderCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      if (romanticAudio) {
+        romanticAudio.playChime();
+      }
+
+      window.dispatchEvent(new CustomEvent('celebrateHearts', {
+        detail: { x: window.innerWidth / 2, y: window.innerHeight / 2, count: 20 }
+      }));
+    });
+  }
+
+  // 5. Forgive button
+  if (forgiveBtn && forgiveResponse) {
+    forgiveBtn.addEventListener('click', () => {
+      forgiveResponse.classList.remove('hidden-element');
+      forgiveBtn.style.display = 'none';
+
+      if (romanticAudio) {
+        romanticAudio.playPop();
+      }
+
+      window.dispatchEvent(new CustomEvent('celebrateHearts', {
+        detail: { x: window.innerWidth / 2, y: window.innerHeight / 2, count: 25 }
+      }));
+    });
+  }
+}
+
+function spawnBonkSparks(container) {
+  if (!container) return;
+  const icons = ['⭐', '✨', '💫', '💥', '❤️', '💋'];
+  for (let i = 0; i < 6; i++) {
+    const el = document.createElement('span');
+    el.className = 'bonk-spark-particle';
+    el.textContent = icons[Math.floor(Math.random() * icons.length)];
+
+    const angle = (Math.PI * 2 / 6) * i + (Math.random() - 0.5);
+    const distance = Math.random() * 45 + 35;
+    const tx = Math.cos(angle) * distance;
+    const ty = Math.sin(angle) * distance - 25;
+    const tr = (Math.random() - 0.5) * 60;
+
+    el.style.left = '50%';
+    el.style.top = '25%';
+    el.style.setProperty('--tx', `${tx}px`);
+    el.style.setProperty('--ty', `${ty}px`);
+    el.style.setProperty('--tr', `${tr}deg`);
+
+    container.appendChild(el);
+    setTimeout(() => {
+      el.remove();
+    }, 650);
+  }
 }
 
 /**

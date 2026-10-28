@@ -1038,3 +1038,348 @@
   font-size: 1.35rem;
   color: var(--rose-primary);
 }
+
+/* ==========================================================================
+   6. BACCHA'S ANGER MANAGEMENT CENTRE 🔨
+   ========================================================================== */
+.anger-box-wrapper {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.anger-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 3rem 2rem;
+  border: 1px solid var(--border-delicate);
+  box-shadow: var(--shadow-medium);
+  text-align: center;
+  position: relative;
+  background-image: radial-gradient(circle at top center, var(--blush-100) 0%, transparent 70%);
+}
+
+@media (max-width: 480px) {
+  .anger-card {
+    padding: 2.25rem 1.25rem;
+  }
+}
+
+.bonk-stage {
+  position: relative;
+  margin: 0 auto 1.5rem auto;
+  display: inline-block;
+}
+
+/* Animated Cartoon Rubber Hammer */
+.cartoon-hammer {
+  position: absolute;
+  top: -45px;
+  right: -25px;
+  font-size: 4.5rem;
+  line-height: 1;
+  z-index: 25;
+  transform-origin: 80% 80%;
+  transform: rotate(45deg);
+  opacity: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.22));
+}
+
+.cartoon-hammer.hammer-strike {
+  animation: hammerHit 0.38s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+
+@keyframes hammerHit {
+  0% {
+    opacity: 1;
+    transform: translate(15px, -30px) rotate(55deg) scale(0.9);
+  }
+  45% {
+    opacity: 1;
+    transform: translate(-45px, 35px) rotate(-35deg) scale(1.25);
+  }
+  75% {
+    opacity: 0.9;
+    transform: translate(-30px, 20px) rotate(-15deg) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(45deg) scale(1);
+  }
+}
+
+/* Boyfriend Photo Frame & Squash/Stretch Effect */
+.boyfriend-photo-frame {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 5px solid #FFFFFF;
+  box-shadow: 0 12px 30px rgba(147, 34, 56, 0.18);
+  position: relative;
+  background: #FFF0F5;
+  transform-origin: center bottom;
+  transition: transform 0.15s ease;
+}
+
+.boyfriend-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.boyfriend-photo-frame.photo-squished {
+  animation: photoSquishWobble 0.48s cubic-bezier(0.36, 0.07, 0.19, 0.97) forwards;
+}
+
+@keyframes photoSquishWobble {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.2, 0.76) translateY(16px) rotate(-4deg); }
+  50% { transform: scale(0.88, 1.15) translateY(-8px) rotate(5deg); }
+  75% { transform: scale(1.06, 0.94) translateY(3px) rotate(-2deg); }
+  100% { transform: scale(1) translateY(0) rotate(0deg); }
+}
+
+/* Photo Caption Pill */
+.boyfriend-caption-pill {
+  margin-top: 1.25rem;
+}
+
+.boyfriend-caption-pill span {
+  background: var(--blush-100);
+  border: 1px dashed var(--rose-primary);
+  border-radius: var(--radius-full);
+  padding: 0.45rem 1.15rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--cherry-accent);
+  display: inline-block;
+  line-height: 1.35;
+}
+
+/* Floating Particle Impact Layer */
+.impact-burst-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.bonk-spark-particle {
+  position: absolute;
+  font-size: 1.5rem;
+  pointer-events: none;
+  animation: floatSpark 0.65s ease-out forwards;
+}
+
+@keyframes floatSpark {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx), var(--ty)) scale(1.3) rotate(var(--tr));
+  }
+}
+
+/* Reaction Area & Speech Bubble */
+.bonk-reaction-area {
+  margin: 1.5rem 0 1.25rem 0;
+}
+
+.bonk-speech-bubble {
+  background: #FFFDF8;
+  border: 1.5px dashed var(--rose-primary);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.25rem;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--cherry-deep);
+  font-weight: 600;
+  margin-bottom: 1.1rem;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(184, 83, 104, 0.08);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.bonk-counter-badge {
+  font-family: var(--font-handwritten);
+  font-size: 1.35rem;
+  color: var(--cherry-accent);
+  background: var(--blush-100);
+  border: 1px solid var(--border-delicate);
+  padding: 0.35rem 1.25rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+/* Action Controls */
+.bonk-controls-row {
+  display: flex;
+  gap: 0.85rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.btn-bonk-action {
+  background: linear-gradient(135deg, #ED5D7B 0%, #B82542 100%);
+  color: #FFFFFF;
+  border: none;
+  padding: 1rem 2.2rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(184, 37, 66, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: var(--transition-smooth);
+}
+
+.btn-bonk-action:hover, .btn-bonk-action:focus-visible {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 32px rgba(184, 37, 66, 0.45);
+  outline: none;
+}
+
+.btn-bonk-action:active {
+  transform: scale(0.96);
+}
+
+.btn-surrender-action {
+  background: var(--blush-100);
+  color: var(--cherry-accent);
+  border: 1.5px solid var(--rose-primary);
+  padding: 0.95rem 1.8rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-surrender-action:hover {
+  background: #FFFFFF;
+  border-color: var(--cherry-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(184, 83, 104, 0.2);
+}
+
+/* Sound Toggle */
+.bonk-sound-toggle-wrapper {
+  margin-top: 1.4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.sound-toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: var(--text-soft);
+  user-select: none;
+}
+
+.sound-toggle-label input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--cherry-accent);
+  cursor: pointer;
+}
+
+/* Surrender Reveal Card */
+.surrender-card {
+  margin-top: 2.25rem;
+  background: linear-gradient(135deg, #FFF9FA 0%, #FFF2F5 100%);
+  border: 2px dashed var(--rose-primary);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 1.6rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(184, 83, 104, 0.12);
+  animation: fadeInSurrender 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInSurrender {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.surrender-title {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  color: var(--cherry-deep);
+  margin-bottom: 0.75rem;
+}
+
+.surrender-text {
+  font-size: 1.05rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+  line-height: 1.65;
+}
+
+.surrender-subtext {
+  font-family: var(--font-handwritten);
+  font-size: 1.45rem;
+  color: var(--cherry-accent);
+  margin-bottom: 1.5rem;
+}
+
+.forgive-response-box {
+  margin-top: 1.25rem;
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.4rem;
+  border: 1px solid var(--border-delicate);
+  box-shadow: 0 4px 14px rgba(184, 83, 104, 0.08);
+  animation: fadeInSurrender 0.35s ease forwards;
+}
+
+.forgive-message {
+  font-size: 1.05rem;
+  color: var(--cherry-deep);
+  line-height: 1.68;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.hidden-element {
+  display: none !important;
+}
+
+/* Reduced Motion Override for Bonk */
+@media (prefers-reduced-motion: reduce) {
+  .cartoon-hammer.hammer-strike {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  .boyfriend-photo-frame.photo-squished {
+    animation: none !important;
+  }
+  .bonk-spark-particle {
+    display: none !important;
+  }
+}

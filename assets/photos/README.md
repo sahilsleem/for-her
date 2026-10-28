@@ -9,6 +9,7 @@ Drop your real couple photographs into this folder with these exact filenames:
 5. **`couple-4.jpg`** — Being silly together / funny faces / photobooth
 6. **`couple-5.jpg`** — A golden hour / evening date memory
 7. **`couple-6.jpg`** — Holding hands / soft close-up memory
+8. **`boyfriend.jpg`** — Your funny/cute face for "baccha's anger management centre 🔨" (square or portrait works best)
 
 ### How it works:
 - If a file (e.g. `couple-1.jpg`) is present in this directory, the website will display your real photograph inside the polaroid frame.

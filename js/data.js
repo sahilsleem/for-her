@@ -11,6 +11,7 @@ export const ROMANTIC_CONFIG = {
 
   // Set to true once you place couple-hero.jpg & couple-1.jpg in assets/photos/
   hasRealPhotos: false,
+  hasBoyfriendPhoto: false,
 
   // Set to true if you place our-song.mp3 in assets/audio/
   useCustomSong: false,
@@ -19,6 +20,23 @@ export const ROMANTIC_CONFIG = {
   directSmsNumber: null,
   whatsappNumber: null,
 };
+
+// Curated silly, affectionate bonk messages
+export const BONK_MESSAGES = [
+  "BONK! punishment for neglecting pookie 😔",
+  "guilty of stealing time from my own girl 😭",
+  "the court finds this chicken extremely silly",
+  "fine imposed: 100 forehead kisses",
+  "boyfriend has been sentenced to unlimited cuddles",
+  "criminal must now give baccha his full attention",
+  "he has been bonked. mwuahh for the victim 💋",
+  "owww okay i deserved that one, pookie 🥺",
+  "bonk penalty: 1 hour back massage with zero complaints",
+  "verdict: 100% guilty of being a distracted idiot",
+  "critical hit! boyfriend's brain is now 100% thinking of baccha",
+  "another bonk! fine doubled to 200 kisses and warm chai",
+  "direct hit to the head. please cuddle to restore health ❤️"
+];
 
 // 45 Genuine, cute, silly, and sweet reasons why I love you
 export const REASONS_I_LOVE_YOU = [
@@ -220,6 +238,7 @@ export const PHOTO_MANIFEST = [
 
 if (typeof window !== 'undefined') {
   window.ROMANTIC_CONFIG = ROMANTIC_CONFIG;
+  window.BONK_MESSAGES = BONK_MESSAGES;
   window.REASONS_I_LOVE_YOU = REASONS_I_LOVE_YOU;
   window.OPEN_WHEN_LETTERS = OPEN_WHEN_LETTERS;
   window.DATE_BUCKET_LIST = DATE_BUCKET_LIST;

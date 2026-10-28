@@ -233,6 +233,44 @@ export class RomanticAudioEngine {
       // Ignore if audio context not unlocked yet
     }
   }
+
+  /**
+   * Play a cute cartoon rubber bonk sound (synthesized hollow woodblock / pitch drop)
+   */
+  playCartoonBonk() {
+    this.initContext();
+    if (!this.audioCtx) return;
+    try {
+      const now = this.audioCtx.currentTime;
+      const osc = this.audioCtx.createOscillator();
+      const osc2 = this.audioCtx.createOscillator();
+      const gain = this.audioCtx.createGain();
+
+      // Rubber bonk: quick frequency drop from 460Hz down to 110Hz
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(460, now);
+      osc.frequency.exponentialRampToValueAtTime(110, now + 0.18);
+
+      // Hollow wooden slap harmonic
+      osc2.type = 'sine';
+      osc2.frequency.setValueAtTime(260, now);
+      osc2.frequency.exponentialRampToValueAtTime(80, now + 0.15);
+
+      gain.gain.setValueAtTime(0.35, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
+
+      osc.connect(gain);
+      osc2.connect(gain);
+      gain.connect(this.audioCtx.destination);
+
+      osc.start(now);
+      osc2.start(now);
+      osc.stop(now + 0.23);
+      osc2.stop(now + 0.23);
+    } catch (e) {
+      // Ignore if audio context not unlocked yet
+    }
+  }
 }
 
 // Global audio instance

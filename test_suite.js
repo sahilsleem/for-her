@@ -72,11 +72,48 @@ async function runTests() {
   console.log(`✓ Lightbox opened: ${lightboxActive}`);
 
   // Close Lightbox
-  const lightboxClose = await page.$('#lightbox-close');
-  await lightboxClose.click();
+  await page.$eval('#lightbox-close', el => el.click());
   await new Promise(r => setTimeout(r, 400));
   const lightboxClosed = await page.$eval('#lightbox-modal', el => !el.classList.contains('active'));
   console.log(`✓ Lightbox closed: ${lightboxClosed}`);
+
+  // Check 5.5: Baccha's Anger Management Centre 🔨
+  const angerSection = await page.$('#anger-centre');
+  if (!angerSection) throw new Error('Anger management centre section not found!');
+  console.log('✓ Found anger management centre section');
+
+  const bonkBtn = await page.$('#bonk-btn');
+  if (!bonkBtn) throw new Error('Bonk button not found!');
+
+  // Test Bonk 1 & 2
+  await page.$eval('#bonk-btn', el => el.click());
+  await new Promise(r => setTimeout(r, 200));
+
+  await page.$eval('#bonk-btn', el => el.click());
+  await new Promise(r => setTimeout(r, 300));
+
+  const bonkCounterText = await page.$eval('#bonk-counter-text', el => el.textContent.trim());
+  console.log(`✓ Bonk counter after 2 bonks: "${bonkCounterText}"`);
+
+  const bonkQuote = await page.$eval('#speech-quote-text', el => el.textContent.trim());
+  console.log(`✓ Bonk speech quote updated: ${bonkQuote}`);
+
+  // Test Sound toggle
+  await page.$eval('#bonk-sound-checkbox', el => el.click());
+  const soundStatus = await page.$eval('#bonk-sound-status', el => el.textContent.trim());
+  console.log(`✓ Bonk sound toggle changed to: ${soundStatus}`);
+
+  // Test Surrender button
+  await page.$eval('#surrender-btn', el => el.click());
+  await new Promise(r => setTimeout(r, 400));
+  const surrenderVisible = await page.$eval('#surrender-card', el => !el.classList.contains('hidden-element'));
+  console.log(`✓ Surrender card revealed: ${surrenderVisible}`);
+
+  // Test Forgive button
+  await page.$eval('#forgive-btn', el => el.click());
+  await new Promise(r => setTimeout(r, 400));
+  const forgiveVisible = await page.$eval('#forgive-response', el => !el.classList.contains('hidden-element'));
+  console.log(`✓ Forgive response revealed: ${forgiveVisible}`);
 
   // Check 6: Love Notes (11 cards)
   const noteCards = await page.$$('.note-card');

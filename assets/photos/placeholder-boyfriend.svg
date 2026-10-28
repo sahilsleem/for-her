@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="boyBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF0F5"/>
+      <stop offset="50%" stop-color="#FFE4EC"/>
+      <stop offset="100%" stop-color="#FCD5DE"/>
+    </linearGradient>
+    <radialGradient id="faceGlow" cx="50%" cy="45%" r="45%">
+      <stop offset="0%" stop-color="#FFEEDB" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FFDEBA" stop-opacity="0.95"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="600" rx="36" fill="url(#boyBg)"/>
+  <rect x="20" y="20" width="560" height="560" rx="28" fill="none" stroke="#E8A598" stroke-width="2.5" stroke-dasharray="6,6" opacity="0.6"/>
+
+  <!-- Dizzy stars above head -->
+  <g fill="#E5A95A">
+    <path d="M 220 90 Q 220 102 210 102 Q 220 102 220 114 Q 220 102 230 102 Q 220 102 220 90 Z" />
+    <path d="M 380 85 Q 380 97 370 97 Q 380 97 380 109 Q 380 97 390 97 Q 380 97 380 85 Z" />
+    <path d="M 300 70 Q 300 85 288 85 Q 300 85 300 100 Q 300 85 312 85 Q 300 85 300 70 Z" />
+  </g>
+
+  <!-- Cartoon Boy Head -->
+  <g id="boy-avatar">
+    <!-- Hair back -->
+    <path d="M 190 280 C 180 160 420 160 410 280 Z" fill="#3D2B24"/>
+
+    <!-- Head -->
+    <ellipse cx="300" cy="290" rx="115" ry="125" fill="url(#faceGlow)"/>
+
+    <!-- Hair front / bangs -->
+    <path d="M 185 240 C 200 160 260 150 300 170 C 340 150 400 160 415 240 C 380 200 350 215 300 205 C 250 215 220 200 185 240 Z" fill="#3D2B24"/>
+
+    <!-- Ears -->
+    <ellipse cx="185" cy="290" rx="16" ry="24" fill="#FFDEBA"/>
+    <ellipse cx="415" cy="290" rx="16" ry="24" fill="#FFDEBA"/>
+
+    <!-- Eyes (silly apologetic squint) -->
+    <ellipse cx="255" cy="285" rx="10" ry="13" fill="#2E1C14"/>
+    <ellipse cx="345" cy="285" rx="10" ry="13" fill="#2E1C14"/>
+    <circle cx="258" cy="281" r="3.5" fill="#FFFFFF"/>
+    <circle cx="348" cy="281" r="3.5" fill="#FFFFFF"/>
+
+    <!-- Eyebrows (worried/apologetic tilt) -->
+    <path d="M 235 260 Q 255 252 275 265" stroke="#3D2B24" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    <path d="M 325 265 Q 345 252 365 260" stroke="#3D2B24" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Cute little blush cheeks -->
+    <ellipse cx="235" cy="315" rx="18" ry="10" fill="#FF8FA3" opacity="0.6"/>
+    <ellipse cx="365" cy="315" rx="18" ry="10" fill="#FF8FA3" opacity="0.6"/>
+
+    <!-- Cute band-aid on cheek -->
+    <g transform="translate(215, 300) rotate(15)">
+      <rect width="36" height="16" rx="4" fill="#FFE2C4" stroke="#DCA282" stroke-width="1.5"/>
+      <circle cx="18" cy="8" r="2" fill="#DCA282"/>
+    </g>
+
+    <!-- Apologetic goofy mouth -->
+    <path d="M 285 345 Q 300 338 315 345" stroke="#8E283B" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Sweat drop of nervous guilt -->
+    <path d="M 378 230 C 378 220 390 205 390 205 C 390 205 402 220 402 230 C 402 238 392 244 390 244 C 388 244 378 238 378 230 Z" fill="#8AC4D0" opacity="0.85"/>
+  </g>
+
+  <!-- Typography & Instructions -->
+  <text x="300" y="470" font-family="'Georgia', serif" font-size="25" font-weight="bold" fill="#6B1D2A" text-anchor="middle">
+    boyfriend photo slot ♡
+  </text>
+  <text x="300" y="505" font-family="'Helvetica Neue', sans-serif" font-size="14.5" fill="#B85368" text-anchor="middle">
+    drop your picture here: assets/photos/boyfriend.jpg
+  </text>
+  <text x="300" y="530" font-family="'Helvetica Neue', sans-serif" font-size="13" fill="#8C7A77" text-anchor="middle">
+    (or keep this goofy placeholder!)
+  </text>
+</svg>
