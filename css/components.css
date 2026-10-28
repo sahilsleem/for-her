@@ -844,61 +844,6 @@
   margin-bottom: 0;
 }
 
-.delete-date-btn {
-  background: none;
-  border: none;
-  font-size: 1.4rem;
-  color: var(--text-light);
-  cursor: pointer;
-  padding: 0 0.4rem;
-  line-height: 1;
-  transition: color 0.2s ease;
-}
-
-.delete-date-btn:hover {
-  color: var(--cherry-accent);
-}
-
-.add-date-form {
-  display: flex;
-  gap: 0.75rem;
-}
-
-@media (max-width: 480px) {
-  .add-date-form {
-    flex-direction: column;
-  }
-}
-
-.add-date-input {
-  flex-grow: 1;
-  padding: 0.85rem 1.4rem;
-  border-radius: var(--radius-full);
-  border: 1.5px solid var(--border-delicate);
-  background: #FFFFFF;
-  font-family: var(--font-sans);
-  font-size: 0.95rem;
-  color: var(--text-main);
-  outline: none;
-  transition: border-color 0.2s ease;
-}
-
-.add-date-input:focus {
-  border-color: var(--rose-primary);
-}
-
-.btn-add-date {
-  background: var(--blush-100);
-  border: 1.5px solid var(--rose-primary);
-  color: var(--cherry-accent);
-  padding: 0.85rem 1.6rem;
-  border-radius: var(--radius-full);
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition-smooth);
-  white-space: nowrap;
-}
-
 .btn-add-date:hover {
   background: var(--rose-primary);
   color: #FFFFFF;

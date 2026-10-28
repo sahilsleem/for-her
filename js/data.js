@@ -9,9 +9,9 @@ export const ROMANTIC_CONFIG = {
   boyfriendName: "Sahil",
   nickname: "my pookie",
 
-  // Set to true once you place couple-hero.jpg & couple-1.jpg in assets/photos/
-  hasRealPhotos: false,
-  hasBoyfriendPhoto: false,
+  // Real couple photographs & boyfriend photo are active
+  hasRealPhotos: true,
+  hasBoyfriendPhoto: true,
 
   // Set to true if you place our-song.mp3 in assets/audio/
   useCustomSong: false,
@@ -176,63 +176,77 @@ export const DATE_BUCKET_LIST = [
   { id: "date-10", title: "That food spot you keep sending me reels of", desc: "Dress up, order way too much food, and let you take cute food pictures before we dig in.", checked: false }
 ];
 
-// Photo Album Manifest (Casual, cute captions)
+// Photo Album Manifest with real couple moments & authentic boyfriend voice
 export const PHOTO_MANIFEST = [
   {
     id: "hero",
     realPath: "assets/photos/couple-hero.jpg",
-    placeholderPath: "assets/photos/placeholder-hero.svg",
     title: "my favorite picture of us",
-    caption: "Look at you looking at me. I swear my heart does a whole flip every time i see this. You're so pretty, chicken.",
-    date: "Forever my favorite ♡"
+    caption: "look at your big radiant smile here. your arm wrapped around mine and that sunny breeze. this is forever my absolute favorite photo of us, baccha.",
+    date: "my whole heart ♡"
   },
   {
     id: "photo-1",
     realPath: "assets/photos/couple-1.jpg",
-    placeholderPath: "assets/photos/placeholder-1.svg",
-    title: "our lazy mornings",
-    caption: "Tea getting cold on the counter, you half-asleep stealing all the blankets, and me just staring at you thinking how did i get so lucky.",
-    date: "My happy place"
+    title: "head on my shoulder",
+    caption: "the second you rest your head on me, my whole day just slows down. you're my safest, warmest place, pookie.",
+    date: "our quiet dates ♡"
   },
   {
     id: "photo-2",
     realPath: "assets/photos/couple-2.jpg",
-    placeholderPath: "assets/photos/placeholder-2.svg",
-    title: "that big goofy laugh of yours",
-    caption: "This laugh right here. The unposed, loud, scrunchy-nose one. My whole mission in life is just to make you laugh like that every day.",
-    date: "Cutest sound ever"
+    title: "rides with my chicken",
+    caption: "both hands on your cheeks smiling in the cab with me. literally my favorite travel buddy in the universe.",
+    date: "on the road together"
   },
   {
     id: "photo-3",
     realPath: "assets/photos/couple-3.jpg",
-    placeholderPath: "assets/photos/placeholder-3.svg",
-    title: "our little road adventures",
-    caption: "Getting lost, singing completely off-key with the windows rolled down, and you giggling at my driving. Wouldn't trade it for anything.",
-    date: "On the road with babe"
+    title: "how you make everything quiet",
+    caption: "all the stress and noise in my head just melts away whenever we're sitting together like this.",
+    date: "warm chai & cuddles"
   },
   {
     id: "photo-4",
     realPath: "assets/photos/couple-4.jpg",
-    placeholderPath: "assets/photos/placeholder-4.svg",
-    title: "just being complete goofballs",
-    caption: "Zero filter, making dumb faces, being total weirdos together. Thank you for letting me be 100% myself with you, pookie.",
-    date: "Certified sillies"
+    title: "my sunny pookie",
+    caption: "that sweet little closed-eye smile you do in the sun. nobody gets to see this soft, adorable side of you except me.",
+    date: "sunny afternoons"
   },
   {
     id: "photo-5",
     realPath: "assets/photos/couple-5.jpg",
-    placeholderPath: "assets/photos/placeholder-5.svg",
-    title: "golden hour with my girl",
-    caption: "The sun was pretty that day but honestly it didn't stand a chance next to you. You were glowing, baccha.",
-    date: "My pretty chicken"
+    title: "putting on your lip gloss, hehe",
+    caption: "you making sure your lip gloss is fresh so you can steal kisses later. caught you in 4k, chicken. mwuahh.",
+    date: "little park walks"
   },
   {
     id: "photo-6",
     realPath: "assets/photos/couple-6.jpg",
-    placeholderPath: "assets/photos/placeholder-6.svg",
-    title: "holding your tiny hand",
-    caption: "Your hand fits so perfectly inside mine, it's actually ridiculous. Never letting go, okay? Mwuahh.",
-    date: "Right where you belong"
+    title: "under the trees with you",
+    caption: "yellow scarf, your round glasses, and the prettiest smile in the world. couldn't take my eyes off you that day.",
+    date: "spring breeze ♡"
+  },
+  {
+    id: "photo-7",
+    realPath: "assets/photos/couple-7.jpg",
+    title: "the boss when she's annoyed with me 😤",
+    caption: "look at this dramatic angry glare over your glasses. even when you're mad at me, you're so ridiculously cute.",
+    date: "uh oh, trouble"
+  },
+  {
+    id: "photo-8",
+    realPath: "assets/photos/couple-8.jpg",
+    title: "just you and me, always",
+    caption: "no matter what crazy stuff is going on in life, as long as i'm with you, everything is completely okay.",
+    date: "forever & always ♡"
+  },
+  {
+    id: "photo-9",
+    realPath: "assets/photos/couple-9.jpg",
+    title: "that chin-in-hand smile",
+    caption: "resting your chin in your hand looking at me. i swear i fell in love with you all over again right here.",
+    date: "endless laughs ♡"
   }
 ];
 

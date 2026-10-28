@@ -15,7 +15,6 @@ import { RomanticCanvasEffect } from './petals.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initOpeningSurprise();
-  initMusicAndPetalsControls();
   initReasonsGenerator();
   initOpenWhenLetters();
   initPromiseSeal();
@@ -72,49 +71,7 @@ function initOpeningSurprise() {
 }
 
 /**
- * 2. FLOATING MUSIC & PETALS CONTROLS
- */
-function initMusicAndPetalsControls() {
-  const musicToggleBtn = document.getElementById('music-toggle-btn');
-  const petalsToggleBtn = document.getElementById('petals-toggle-btn');
-  const musicIcon = document.getElementById('music-icon');
-  const musicLabel = document.getElementById('music-label');
-
-  if (musicToggleBtn && romanticAudio) {
-    musicToggleBtn.addEventListener('click', () => {
-      const isPlaying = romanticAudio.toggle();
-      updateMusicUI(isPlaying);
-    });
-
-    document.addEventListener('musicStateChange', (e) => {
-      updateMusicUI(e.detail.isPlaying);
-    });
-  }
-
-  function updateMusicUI(isPlaying) {
-    if (!musicToggleBtn) return;
-    if (isPlaying) {
-      musicToggleBtn.classList.add('playing');
-      if (musicIcon) musicIcon.textContent = '🎵';
-      if (musicLabel) musicLabel.textContent = 'playing cute music ♡';
-    } else {
-      musicToggleBtn.classList.remove('playing');
-      if (musicIcon) musicIcon.textContent = '🔇';
-      if (musicLabel) musicLabel.textContent = 'play music ♡';
-    }
-  }
-
-  if (petalsToggleBtn && window.romanticCanvas) {
-    petalsToggleBtn.addEventListener('click', () => {
-      const isRunning = window.romanticCanvas.toggle();
-      petalsToggleBtn.classList.toggle('active', isRunning);
-      petalsToggleBtn.setAttribute('aria-pressed', isRunning ? 'true' : 'false');
-    });
-  }
-}
-
-/**
- * 3. "REASONS I LOVE YOU" RANDOM GENERATOR
+ * 2. "REASONS I LOVE YOU" RANDOM GENERATOR
  */
 function initReasonsGenerator() {
   const reasonText = document.getElementById('current-reason-text');
@@ -249,7 +206,6 @@ function initOpenWhenLetters() {
  * 5. "A TINY PROMISE" INTERACTIVE WAX SEAL
  */
 function initPromiseSeal() {
-  const sealBtn = document.getElementById('seal-promise-btn');
   const sealStamp = document.getElementById('wax-seal-stamp');
   const sealStatus = document.getElementById('seal-status-text');
   const promiseCheckboxes = document.querySelectorAll('.promise-checkbox');
@@ -259,10 +215,9 @@ function initPromiseSeal() {
   if (isSealed && sealStamp) {
     sealStamp.classList.add('sealed');
     if (sealStatus) sealStatus.textContent = 'sealed with all my love, chicken ♡';
-    if (sealBtn) sealBtn.textContent = 'promise renewed ♡';
   }
 
-  if (sealBtn && sealStamp) {
+  if (sealStamp) {
     const handleSeal = () => {
       sealStamp.classList.add('sealed', 'stamp-press');
       localStorage.setItem('romantic_promise_sealed', 'true');
@@ -270,7 +225,6 @@ function initPromiseSeal() {
       if (sealStatus) {
         sealStatus.textContent = 'sealed with all my love, chicken ♡';
       }
-      sealBtn.textContent = 'promise locked in forever ♡';
 
       if (romanticAudio) {
         romanticAudio.playChime();
@@ -286,7 +240,6 @@ function initPromiseSeal() {
       }, 500);
     };
 
-    sealBtn.addEventListener('click', handleSeal);
     sealStamp.addEventListener('click', handleSeal);
   }
 
@@ -303,8 +256,6 @@ function initPromiseSeal() {
  */
 function initDateBucketList() {
   const listContainer = document.getElementById('date-list-container');
-  const addDateForm = document.getElementById('add-date-form');
-  const dateInput = document.getElementById('new-date-input');
   const countBadge = document.getElementById('date-selected-counter');
 
   if (!listContainer) return;
@@ -348,14 +299,13 @@ function initDateBucketList() {
           <span class="date-title">${item.title}</span>
           ${item.desc ? `<p class="date-desc">${item.desc}</p>` : ''}
         </div>
-        <button class="delete-date-btn" data-index="${index}" aria-label="Remove item" title="Remove item">×</button>
       `;
 
       listContainer.appendChild(dateItem);
     });
 
     if (countBadge) {
-      countBadge.textContent = `${selectedCount} memories checked with pookie ♡`;
+      countBadge.textContent = `${selectedCount} dates chosen with pookie ♡`;
     }
   }
 
@@ -375,41 +325,6 @@ function initDateBucketList() {
       saveAndRender();
     }
   });
-
-  // Handle deleting custom dates
-  listContainer.addEventListener('click', (e) => {
-    if (e.target.matches('.delete-date-btn')) {
-      const idx = parseInt(e.target.dataset.index, 10);
-      userDates.splice(idx, 1);
-      if (romanticAudio) romanticAudio.playPop();
-      saveAndRender();
-    }
-  });
-
-  // Handle adding new custom date
-  if (addDateForm && dateInput) {
-    addDateForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const val = dateInput.value.trim();
-      if (!val) return;
-
-      userDates.unshift({
-        id: `custom-${Date.now()}`,
-        title: val,
-        desc: "Added with love by us ♡",
-        checked: false
-      });
-
-      dateInput.value = '';
-      if (romanticAudio) romanticAudio.playPop();
-
-      saveAndRender();
-
-      window.dispatchEvent(new CustomEvent('celebrateHearts', {
-        detail: { x: window.innerWidth / 2, y: window.innerHeight / 2, count: 18 }
-      }));
-    });
-  }
 
   saveAndRender();
 }
@@ -447,17 +362,14 @@ function initPhotoScrapbook() {
   });
 
   function createPolaroidHTML(photo, isFeatured = false) {
-    const initialSrc = ROMANTIC_CONFIG.hasRealPhotos ? photo.realPath : photo.placeholderPath;
     return `
       <div class="polaroid-frame ${isFeatured ? 'polaroid-featured' : ''}" role="button" tabindex="0" aria-label="View photo: ${photo.title}">
         <div class="polaroid-washi washi-${Math.floor(Math.random() * 4) + 1}"></div>
         <div class="polaroid-photo-wrapper">
           <img class="polaroid-img" 
-               src="${initialSrc}" 
-               data-fallback="${photo.placeholderPath}" 
+               src="${photo.realPath}" 
                alt="${photo.title}" 
-               loading="lazy" />
-          <div class="polaroid-view-badge">tap to see pookie ♡</div>
+               loading="eager" />
         </div>
         <div class="polaroid-footer">
           <span class="polaroid-title">${photo.title}</span>
@@ -471,16 +383,6 @@ function initPhotoScrapbook() {
   function attachPhotoEvents(frameEl, photo) {
     if (!frameEl) return;
     const imgEl = frameEl.querySelector('.polaroid-img');
-
-    // Graceful fallback if real photo doesn't exist
-    if (imgEl) {
-      imgEl.addEventListener('error', () => {
-        if (!imgEl.src.endsWith(photo.placeholderPath)) {
-          imgEl.src = photo.placeholderPath;
-          frameEl.classList.add('has-placeholder');
-        }
-      });
-    }
 
     const openZoom = () => {
       if (!lightboxModal) return;
@@ -547,17 +449,7 @@ function initAngerManagementCentre() {
 
   // 1. Photo initialization
   if (photoImg) {
-    if (ROMANTIC_CONFIG.hasBoyfriendPhoto) {
-      photoImg.src = 'assets/photos/boyfriend.jpg';
-    } else {
-      photoImg.src = 'assets/photos/placeholder-boyfriend.svg';
-    }
-
-    photoImg.addEventListener('error', () => {
-      if (!photoImg.src.endsWith('placeholder-boyfriend.svg')) {
-        photoImg.src = 'assets/photos/placeholder-boyfriend.svg';
-      }
-    });
+    photoImg.src = 'assets/photos/boyfriend.jpg';
   }
 
   // 2. Sound state (Default is OFF)

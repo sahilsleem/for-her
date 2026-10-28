@@ -24,18 +24,6 @@
   <!-- Floating Falling Petals & Hearts Canvas -->
   <canvas id="petals-canvas" aria-hidden="true"></canvas>
 
-  <!-- Floating Ambient Controls (Sticky Top Right) -->
-  <nav class="ambient-bar" aria-label="Audio and visual controls">
-    <button id="music-toggle-btn" class="ambient-pill-btn" aria-label="Toggle ambient romantic music" title="Toggle cute music">
-      <span id="music-icon" aria-hidden="true">🎵</span>
-      <span id="music-label" class="label-text">play music ♡</span>
-    </button>
-    <button id="petals-toggle-btn" class="ambient-pill-btn active" aria-label="Toggle falling petals" title="Toggle falling petals" aria-pressed="true">
-      <span aria-hidden="true">🌸</span>
-      <span class="label-text">petals</span>
-    </button>
-  </nav>
-
   <!-- =========================================================================
        1. OPENING SURPRISE SCREEN
        ========================================================================= -->
@@ -172,11 +160,9 @@
               <!-- Boyfriend Photo Frame -->
               <div class="boyfriend-photo-frame" id="boyfriend-photo-frame">
                 <img id="boyfriend-photo-img" 
-                     src="assets/photos/placeholder-boyfriend.svg" 
-                     data-real="assets/photos/boyfriend.jpg"
-                     data-fallback="assets/photos/placeholder-boyfriend.svg"
+                     src="assets/photos/boyfriend.jpg" 
                      alt="The idiot who forgot to give his pookie enough attention" 
-                     loading="lazy" />
+                     loading="eager" />
               </div>
 
               <!-- Playful Caption -->
@@ -537,10 +523,6 @@
               ♡
             </div>
             <div id="seal-status-text" class="seal-status-text">tap the seal to lock it in, chicken ♡</div>
-            <button id="seal-promise-btn" class="btn-secondary-romantic">
-              <span>seal this promise forever, pookie</span>
-              <span aria-hidden="true">💌</span>
-            </button>
           </div>
         </div>
 
@@ -549,25 +531,17 @@
           <div class="section-header" style="margin-bottom: 1.5rem;">
             <span class="handwritten" style="font-size: 1.4rem; color: var(--rose-primary);">fun stuff with you ♡</span>
             <h3 class="serif-title" style="font-size: 2rem;">little things i wanna do with my chicken</h3>
-            <p class="section-subtitle">check off the ones you want, or type your own idea below!</p>
+            <p class="section-subtitle">check off whatever you're in the mood for, pookie ♡</p>
           </div>
 
           <div class="date-list-header">
-            <span class="handwritten" style="font-size: 1.2rem; color: var(--text-soft);">our interactive date bucket list</span>
-            <span id="date-selected-counter" class="date-counter-badge">0 memories checked with pookie ♡</span>
+            <span class="handwritten" style="font-size: 1.25rem; color: var(--text-soft);">dates i want with you</span>
+            <span id="date-selected-counter" class="date-counter-badge">dates chosen: 0 ♡</span>
           </div>
 
           <div id="date-list-container" class="date-list-box">
             <!-- Dynamically populated from localStorage/data.js -->
           </div>
-
-          <form id="add-date-form" class="add-date-form">
-            <input type="text" id="new-date-input" class="add-date-input" placeholder="have an idea? type it here, baccha..." required>
-            <button type="submit" class="btn-add-date">
-              <span>Add to our list</span>
-              <span aria-hidden="true">♡</span>
-            </button>
-          </form>
         </div>
 
         <!-- E. "One last thing..." Secret Voucher Reveal -->

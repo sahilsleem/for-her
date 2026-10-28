@@ -63,37 +63,6 @@
   transform: scale(1.04);
 }
 
-/* Hover / Touch Hint Badge */
-.polaroid-view-badge {
-  position: absolute;
-  bottom: 0.75rem;
-  right: 0.75rem;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(6px);
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-full);
-  font-family: var(--font-handwritten);
-  font-size: 0.95rem;
-  color: var(--rose-dark);
-  border: 1px solid var(--border-delicate);
-  opacity: 0;
-  transform: translateY(4px);
-  transition: var(--transition-smooth);
-}
-
-.polaroid-frame:hover .polaroid-view-badge,
-.polaroid-frame:focus-visible .polaroid-view-badge {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (hover: none) {
-  .polaroid-view-badge {
-    opacity: 0.9;
-    transform: translateY(0);
-  }
-}
-
 /* Polaroid Handwritten Footer */
 .polaroid-footer {
   margin-top: 1.15rem;

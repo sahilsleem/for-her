@@ -181,14 +181,11 @@ p:last-child {
 .section-tag {
   display: inline-block;
   font-family: var(--font-handwritten);
-  font-size: 1.35rem;
+  font-size: 1.55rem;
   color: var(--rose-primary);
-  background: var(--blush-100);
-  border: 1px dashed var(--rose-primary);
-  padding: 0.2rem 1.1rem;
-  border-radius: var(--radius-full);
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.35rem;
   transform: rotate(-1.5deg);
+  font-weight: 600;
 }
 
 .section-title {
@@ -202,62 +199,6 @@ p:last-child {
   color: var(--text-soft);
   max-width: 540px;
   margin: 0 auto;
-}
-
-/* Sticky Ambient Control Bar */
-.ambient-bar {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 100;
-  display: flex;
-  gap: 0.6rem;
-  align-items: center;
-}
-
-.ambient-pill-btn {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--border-delicate);
-  padding: 0.5rem 0.95rem;
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-main);
-  box-shadow: var(--shadow-soft);
-  cursor: pointer;
-  transition: var(--transition-smooth);
-}
-
-.ambient-pill-btn:hover {
-  background: #FFFFFF;
-  border-color: var(--rose-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
-}
-
-.ambient-pill-btn.playing {
-  border-color: var(--rose-primary);
-  background: var(--blush-100);
-  color: var(--cherry-accent);
-}
-
-.ambient-pill-btn.active {
-  background: var(--blush-100);
-  color: var(--cherry-accent);
-}
-
-@media (max-width: 480px) {
-  .ambient-pill-btn span.label-text {
-    display: none;
-  }
-  .ambient-pill-btn {
-    padding: 0.55rem 0.75rem;
-  }
 }
 
 /* Toast Notification */
