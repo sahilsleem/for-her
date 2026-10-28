@@ -1,94 +1,89 @@
 /**
  * Personalization & Romantic Content Data
  * 
- * You can easily customize any text or name here.
- * Defaults are written in an intimate, heartfelt boyfriend voice.
+ * Written directly from the boyfriend at 2 AM for his girl.
  */
 
 export const ROMANTIC_CONFIG = {
-  // Names & Placeholders (Feel free to edit these!)
-  girlfriendName: "my love",          // e.g. "Maya", "Sarah", or keep as "my love"
-  boyfriendName: "me",                // e.g. "Sahil", or "your boy"
-  nickname: "my favourite person",    // e.g. "sweetheart", "bubs", "angel"
-  
-  // Set to true once you place couple-hero.jpg & couple-1.jpg... in assets/photos/
+  girlfriendName: "baccha",
+  boyfriendName: "Sahil",
+  nickname: "my pookie",
+
+  // Set to true once you place couple-hero.jpg & couple-1.jpg in assets/photos/
   hasRealPhotos: false,
 
   // Set to true if you place our-song.mp3 in assets/audio/
   useCustomSong: false,
 
   // Custom contact action for the morning text button:
-  // e.g. "sms:+1234567890?body=I'm awake! ♡ I loved the surprise..."
-  // or leave as null for default celebratory message
   directSmsNumber: null,
   whatsappNumber: null,
 };
 
-// 45 Curated, deeply heartfelt reasons why I love you
+// 45 Genuine, cute, silly, and sweet reasons why I love you
 export const REASONS_I_LOVE_YOU = [
-  "The quiet, effortless way you make anywhere we are feel like home.",
-  "Your genuine laugh—the unfiltered, breathless one that escapes when something is truly funny.",
-  "How deeply and sincerely you care about the people you love.",
-  "The sleepy, soft sound of your voice when you answer my morning call.",
-  "The way your hand instinctively reaches for mine whenever we cross the street or walk side by side.",
-  "Your kindness, which you give so naturally without ever asking for recognition.",
-  "How passionate you become when you talk about something that excites your soul.",
-  "The little scrunch in your nose when you're concentrating or teasing me.",
-  "How safe and understood I feel with you, even when I'm at my lowest.",
-  "The way you remember the smallest, quietest details about my life that even I forget.",
-  "Your resilience—how gracefully you carry so much on your shoulders, even when you're tired.",
-  "The warmth of your hugs; the way you melt into my chest as if all the world's noise disappeared.",
-  "How breathtaking you look when the morning light hits your face, completely bare and natural.",
-  "Your sense of humor, especially the silly private jokes only the two of us understand.",
-  "The way you look at me across a crowded room, like we're sharing a quiet secret nobody else knows.",
-  "How you encourage me to be a better man, simply by existing as the extraordinary person you are.",
-  "The patience you've shown me, even when I've stumbled or failed to show up the way I should.",
-  "Your beautiful, radiant smile that genuinely lights up the entire room.",
-  "The cute little sounds you make when you stretch or get cozy under a heavy blanket.",
-  "How much you appreciate the little things: a warm cup of coffee, a gentle breeze, a pretty sky.",
-  "The way you tuck your hair behind your ear when you're thinking or a little nervous.",
-  "How comforting your silence is. With you, I never feel pressured to fill the quiet.",
-  "The way you get excited about food you love and do a tiny happy dance.",
-  "Your loyalty and how steadfast you are in what you believe in.",
-  "The way you forgive and hold space for honesty.",
-  "How you look at baby animals or cute things with pure, innocent wonder.",
-  "The warmth of your hands when it's chilly outside.",
-  "How you listen—not just waiting for your turn to speak, but truly hearing my heart.",
-  "The way my heart still skips a beat whenever I see your name appear on my screen.",
-  "Your taste in music and the way you sing along softly under your breath.",
-  "How incredibly thoughtful you are, always thinking of ways to make someone else's day softer.",
-  "The way your eyes crinkle up at the corners when you're truly happy.",
-  "How you make ordinary errands feel like the best part of my weekend.",
-  "Your courage, even when you are scared of the outcome.",
-  "The scent of your perfume on my sweaters long after we've said goodbye.",
-  "How you hold my arm when we're walking somewhere new.",
-  "The gentle, reassuring touch of your fingers when I'm stressed or overwhelmed.",
-  "The fact that among eight billion people on this planet, my heart found and chose you.",
-  "How proud I am to stand beside you and call you my girlfriend.",
-  "The way you protect your peace and the dignity you carry yourself with.",
-  "How you still manage to surprise me with new depths of your intelligence and grace.",
-  "The cute, sleepy voice notes you leave me when you're dozing off.",
-  "The way you never pretend to be someone you're not.",
-  "How simply sitting next to you doing nothing is better than doing everything with anyone else.",
-  "Because loving you is the easiest, truest thing I have ever done."
+  "The sleepy, raspy sound of your voice when you answer my morning call.",
+  "How you do that tiny happy dance whenever your favorite food arrives at the table.",
+  "The way you scrunch your nose when you're teasing me or trying not to giggle.",
+  "How you steal my hoodies and then act like they were always yours to begin with.",
+  "The way your hand instinctively searches for mine whenever we walk anywhere together.",
+  "Because you're my chicken and nobody else in the entire world gets me like you do.",
+  "How adorable you look when you're completely focused on something with your mouth slightly open.",
+  "The way you wrap both arms around me and bury your face into my chest when you're tired.",
+  "Your silly, goofy laugh that comes out when something is actually funny, not your polite laugh.",
+  "How you remember the tiniest things i casually mentioned three weeks ago.",
+  "The cute little grumpy face you make when i wake you up from a good nap.",
+  "How soft and warm your hands feel when it's freezing outside.",
+  "The way you look at me across a room like we share a private joke nobody else knows about.",
+  "How fiercely you care about the people you love, even when you're tired yourself.",
+  "Because you let me be a complete weirdo around you without ever judging me.",
+  "The way you sing along softly to songs in the car when you think i'm not paying attention.",
+  "How stunning you look in literally an oversized t-shirt, messy bun, and zero makeup.",
+  "The little squeak sound you make when you stretch in bed, hehe.",
+  "How patient you are with me, even when i'm being stubborn or an absolute idiot.",
+  "The way you tuck your hair behind your ear when you're thinking or a little shy.",
+  "Because having your head on my shoulder is literally the most peaceful feeling on earth.",
+  "The way you text me 'ilyyy' out of nowhere during the day and make my whole mood better.",
+  "How you get so passionate and talk super fast when you're explaining something you love.",
+  "The way you hold onto my arm when we're crossing the street like a little duckling.",
+  "Because loving you is the easiest, most natural thing i have ever done in my life.",
+  "How cute you look when you try to stay mad at me but end up smiling anyway.",
+  "The scent of your hair that stays on my pillows long after you leave.",
+  "The way you listen to my boring rants and actually care about what i'm saying.",
+  "Because you're my best friend, my pookie, and my favorite person all wrapped into one.",
+  "How you always know exactly when i need a hug, even before i realize it myself.",
+  "The funny nicknames you call me that only the two of us understand.",
+  "The way your eyes crinkle up at the edges when you're genuinely happy.",
+  "How proud i feel every single time i get to introduce you as my girl.",
+  "Because even doing absolutely nothing with you feels ten times better than doing anything else.",
+  "The random cute voice notes you leave me when you're half-asleep.",
+  "How sweet and gentle your heart is, even when the world is being annoying.",
+  "The way you demand forehead kisses and won't let me leave without giving you one.",
+  "Because you make me wanna be a better, more thoughtful boyfriend every single day.",
+  "The way you cuddle up against me like you were custom made to fit right in my arms.",
+  "How you always save the last bite of your favorite snack for me.",
+  "Because you're gorgeous, funny, smart, and completely mine. mwuahh.",
+  "The way you check if i ate when i'm having a super busy day.",
+  "Because no matter how stressed i am, five minutes of talking to you fixes everything.",
+  "The way you say my name when you're being soft and clingy.",
+  "Simply because you are you, baccha. and i wouldn't trade you for anything in the universe."
 ];
 
-// Open When Letters (Full, comforting letters)
+// Open When Letters (Comforting, natural boyfriend voice)
 export const OPEN_WHEN_LETTERS = [
   {
     id: "miss-me",
     tag: "Open when",
     title: "you miss me ♡",
     envelopeIcon: "💌",
-    preview: "For the quiet hours when distance feels a little too heavy...",
+    preview: "For when you want a hug and i'm not right there next to you...",
     content: `
-      <p class="letter-salutation">My sweet girl,</p>
-      <p>If you're opening this, it means you're missing me right now, and I wish more than anything that I could just step through the door and wrap both arms around you.</p>
-      <p>I know life gets busy, schedules clash, and sometimes the space between our moments together feels way too wide. But I need you to know something with absolute certainty: <strong>there is never a single day where you aren't on my mind.</strong></p>
-      <p>When I'm walking between places, when I hear a song you like, when something funny happens that I want to tell you first—you are always right there in my thoughts. You aren't just someone I see when it's convenient; you are stitched into the fabric of my everyday life.</p>
-      <p>Close your eyes for three seconds right now. Take a deep, gentle breath. Imagine my arms around you, my chin resting on your head, and my hand gently holding yours. You are loved, you are missed just as much, and we will be together again so soon.</p>
-      <p>Until then, hold this letter close. I'm right here in your heart.</p>
-      <p class="letter-signoff">Forever yours,<br><span>Your boy ♡</span></p>
+      <p class="letter-salutation">Hey my sweet baccha,</p>
+      <p>If you're opening this, you're probably missing me right now, and honestly i wish i could just teleport straight into your room and wrap both arms around you.</p>
+      <p>I know it sucks when we don't get enough time together, and i know distance or busy schedules can feel really heavy. But listen to me, okay? You are on my mind constantly. When i'm walking somewhere, when a song comes on, when something funny happens that i immediately wanna text you about, you're right there with me.</p>
+      <p>Close your eyes for five seconds. Take a slow, deep breath. Imagine me pulling you in, kissing your forehead, and holding you tight until you feel safe. You're my girl, pookie. We're gonna be together really soon, and until then, i'm carrying you right here in my chest.</p>
+      <p>Now smile for me, chicken. Mwuaahhh.</p>
+      <p class="letter-signoff">Yours forever and ever,<br><span>Your boy ♡</span></p>
     `
   },
   {
@@ -96,29 +91,27 @@ export const OPEN_WHEN_LETTERS = [
     tag: "Open when",
     title: "you feel overwhelmed or stressed",
     envelopeIcon: "🌿",
-    preview: "For the days when the weight of everything feels too much to carry...",
+    preview: "For when your head feels too full and everything is getting loud...",
     content: `
-      <p class="letter-salutation">Hey, take a slow breath with me,</p>
-      <p>First, put whatever you're holding down. Relax your shoulders. Unclench your jaw. Let your tongue rest from the roof of your mouth. Inhale deeply... and let it all out.</p>
-      <p>I know how hard you try. I see how much effort, care, and emotion you pour into everything you do, and I know that sometimes the world asks too much of you all at once. It's okay to feel exhausted. It's okay if today wasn't your most productive day. You do not have to be invincible every second of every hour.</p>
-      <p>Please remember: <strong>you don't have to carry the whole world on your own shoulders.</strong> And you certainly don't have to go through tough days alone. Whenever it feels like too much, lean on me. Tell me everything, or tell me nothing at all and just let me sit with you in the quiet.</p>
-      <p>You have survived 100% of your hardest days so far, and you will get through this one too. But you don't have to prove anything to me. To me, you are already everything.</p>
-      <p class="letter-signoff">I've got your back always,<br><span>With all my warmth ♡</span></p>
+      <p class="letter-salutation">Come here, pookie. Take a deep breath with me.</p>
+      <p>First of all: put whatever you're doing down for two minutes. Drop your shoulders away from your ears. Unclench your jaw. Let your tongue rest from the roof of your mouth. Inhale real deep... and let it all out.</p>
+      <p>I see how hard you push yourself, baccha. You care so much about doing everything right, and sometimes the whole world just piles on at once and it feels exhausting. It's totally okay to feel overwhelmed. It's okay if today wasn't your most productive day. You don't have to be a superhero 24/7.</p>
+      <p>You don't have to fix everything right this second. Drink a sip of water, wrap yourself in your blanket, and just breathe. Whenever it gets too loud, come dump all your thoughts on me. Or don't talk at all and just let me stay on the phone with you while you rest. I've got you, meri jaan. Always.</p>
+      <p class="letter-signoff">Big warm hug,<br><span>Sahil ♡</span></p>
     `
   },
   {
     id: "doubt",
     tag: "Open when",
-    title: "you doubt how beautiful you are",
+    title: "you doubt how pretty you are",
     envelopeIcon: "✨",
-    preview: "For when your mirror isn't telling you the truth...",
+    preview: "Because your mirror is definitely lying to you today...",
     content: `
-      <p class="letter-salutation">My gorgeous girl,</p>
-      <p>I wish you could borrow my eyes for just ten seconds. If you could see yourself the way I see you, you would never spend another second doubting how utterly captivating you are.</p>
-      <p>I'm not just talking about when you get dressed up—even though you take my breath away every single time you do. I'm talking about when you've just rolled out of bed, your hair a little messy, your oversized t-shirt hanging loose, wearing zero makeup with sleep still in your eyes. In those raw, unedited moments, I look at you and genuinely think you are the most beautiful human on earth.</p>
-      <p>And your beauty goes so much deeper than the surface. It's in the softness of your voice when you care for someone. It's in the fire in your eyes when you speak about things you love. It's in your laugh, your soul, your mind.</p>
-      <p>Don't ever let a harsh mirror, a bad day, or unrealistic standards convince you otherwise. To me, you are art.</p>
-      <p class="letter-signoff">Always mesmerized by you,<br><span>Your biggest admirer ♡</span></p>
+      <p class="letter-salutation">Okay, stop it right now, chicken.</p>
+      <p>I swear if you're standing in front of a mirror picking yourself apart, i need you to stop and borrow my eyes for just ten seconds.</p>
+      <p>I'm not just talking about when you get all dressed up and look ridiculously hot (even though you totally do). I'm talking about you in the morning, messy hair all over the place, wearing my oversized t-shirt with zero makeup and sleepy eyes. In those exact unedited moments, i look at you and genuinely think you are the prettiest human being to ever exist.</p>
+      <p>You're adorable, you're captivating, and you're mine. So please don't let a bad angle, bad lighting, or a silly mood trick you today. You are so stunning it actually makes me nervous sometimes, hehe. Mwuahh.</p>
+      <p class="letter-signoff">Always obsessed with you,<br><span>Your biggest fan ♡</span></p>
     `
   },
   {
@@ -126,13 +119,13 @@ export const OPEN_WHEN_LETTERS = [
     tag: "Open when",
     title: "you can't fall asleep",
     envelopeIcon: "🌙",
-    preview: "For the late nights when your thoughts won't settle down...",
+    preview: "For late nights when your brain refuses to shut off...",
     content: `
-      <p class="letter-salutation">Sweet dreams waiting for you,</p>
-      <p>It's late, isn't it? The room is quiet, the night is dark, and your brain is refusing to turn off. Whatever is keeping you awake right now—worries about tomorrow, replays of today, or just restless energy—let it pause. Tomorrow will take care of itself.</p>
-      <p>Imagine me tucking the blanket around your shoulders, brushing that soft strand of hair away from your forehead, and whispering that everything is going to be completely okay.</p>
-      <p>You have done enough today. Your mind has worked hard, your heart has loved well, and now you are allowed to rest. No problems need to be solved at this hour. Just close your eyes, listen to the quiet, and drift off knowing that you are safe, cherished, and deeply loved.</p>
-      <p class="letter-signoff">Sleep peacefully, my love,<br><span>See you in the morning ♡</span></p>
+      <p class="letter-salutation">Hey sleepyhead, why are you still awake?</p>
+      <p>It's super late, the room is dark, and your brain is doing that thing where it replays random stuff or worries about tomorrow. Stop it, okay? Tomorrow can wait. Whatever is bothering you isn't getting solved at 2 AM anyway.</p>
+      <p>Just close your eyes, pull the blanket right up to your chin, and imagine me lying next to you. My arm under your head, my hand lightly playing with your hair, whispering that everything is completely okay. Because it is.</p>
+      <p>You did enough today, baccha. Now let your little head rest. Goodnight my babyyy, sweet dreams. See you in the morning. Mwuaahhh.</p>
+      <p class="letter-signoff">Sleeping right beside you in spirit,<br><span>Your boy ♡</span></p>
     `
   },
   {
@@ -140,93 +133,91 @@ export const OPEN_WHEN_LETTERS = [
     tag: "Open when",
     title: "you need reassurance about us",
     envelopeIcon: "🤍",
-    preview: "For when you need an unwavering reminder of where we stand...",
+    preview: "For when you need an honest reminder of where we stand...",
     content: `
-      <p class="letter-salutation">My favorite person,</p>
-      <p>If you're opening this, maybe you're feeling a little distant from me, or maybe you're wondering if my busy days mean my feelings have changed. I want to look you in the eyes and tell you clearly: <strong>not even a fraction.</strong></p>
-      <p>I am human and I make mistakes. Sometimes I get caught up in deadlines and distractions and fail to show you the deliberate attention you deserve. But my heart has never wavered. Choosing you is the easiest, most certain choice of my life.</p>
-      <p>You are not hard to love. You are not asking for too much when you want my time. You deserve someone who shows up, who plans dates, who listens attentively, and who remembers that love is an active verb, not an afterthought.</p>
-      <p>I am working every day to be that man for you. Thank you for your grace, thank you for your patience, and thank you for being the best thing in my world.</p>
-      <p class="letter-signoff">Committed to you completely,<br><span>Always ♡</span></p>
+      <p class="letter-salutation">My pookie,</p>
+      <p>If you're reading this, maybe you've been feeling a little distant from me lately, or wondering if my busy days mean i care any less. I wanna look you right in the eyes and tell you clearly: not even by one percent.</p>
+      <p>I know i mess up. I get caught up with work and daily stress, and i haven't been giving you the deliberate attention you deserve. But my feelings for you have never shifted. Choosing you is the easiest, most certain decision of my life.</p>
+      <p>You're not hard to love, baccha. Wanting my time and effort is not asking for too much. You deserve a boyfriend who plans things, who calls just to hear your voice, and who shows up consistently. I'm working on being that guy for you every single day. I love you, chicken. So much.</p>
+      <p class="letter-signoff">All yours, no matter what,<br><span>Sahil ♡</span></p>
     `
   }
 ];
 
-// Interactive Date Bucket List
+// Interactive Date Bucket List (Cute, natural date ideas)
 export const DATE_BUCKET_LIST = [
-  { id: "date-1", title: "Cook a cozy dinner together", desc: "Phones on airplane mode, our favorite playlist in the background, dancing in the kitchen while pasta boils.", checked: true },
-  { id: "date-2", title: "Spontaneous late-night dessert run", desc: "Hop in the car in pajamas, roll windows down, and go grab ice cream or warm churros.", checked: true },
-  { id: "date-3", title: "A whole Sunday with no alarms", desc: "Zero rush, breakfast in bed, cuddling under two heavy blankets, and watching movies until afternoon.", checked: false },
-  { id: "date-4", title: "Bookstore & coffee crawl", desc: "Wander through aisles of old books, pick out a book for each other, and read together in a quiet café corner.", checked: false },
-  { id: "date-5", title: "Stargazing picnic outside the city", desc: "A cozy quilt, a thermos of hot cocoa or tea, and lying on our backs counting shooting stars together.", checked: false },
-  { id: "date-6", title: "A full surprise date planned entirely by me", desc: "You don't have to make a single decision. Just get dressed up, and let me take care of every single detail.", checked: false },
-  { id: "date-7", title: "Build a massive living-room pillow fort", desc: "Fairy lights, softest cushions, snacks, and our favorite comfort show playing on the laptop.", checked: false },
-  { id: "date-8", title: "Silly photobooth session", desc: "Making the goofiest faces together and putting the photo strip inside our phone cases.", checked: false },
-  { id: "date-9", title: "A quiet sunset walk by the water", desc: "Just holding hands, breathing in the evening breeze, talking about our dreams.", checked: false },
-  { id: "date-10", title: "Try that new restaurant you've been eyeing", desc: "Dress up, order dessert first, and celebrate simply having each other.", checked: false }
+  { id: "date-1", title: "Cozy dinner & kitchen dance party", desc: "Phones on airplane mode, pasta boiling on the stove, and dancing silly with you in our socks.", checked: true },
+  { id: "date-2", title: "Late-night pajama dessert run", desc: "Jumping in the car in our sweatpants, windows down, getting warm brownies or ice cream.", checked: true },
+  { id: "date-3", title: "A whole lazy Sunday with zero alarms", desc: "No waking up early, breakfast in bed, cuddling under big blankets, watching our comfort shows all day.", checked: false },
+  { id: "date-4", title: "Bookstore & chai date", desc: "Wandering through aisles picking out books for each other and whispering in the corner café.", checked: false },
+  { id: "date-5", title: "Stargazing with hot chocolate", desc: "Driving away from city lights, lying on the car hood with a thick blanket, counting stars together.", checked: false },
+  { id: "date-6", title: "A surprise date planned 100% by me", desc: "You don't make a single decision, chicken. Just get dressed up cute and let me take care of every detail.", checked: false },
+  { id: "date-7", title: "Giant living room blanket fort", desc: "Fairy lights inside, all our pillows, snacks everywhere, and movies on the laptop.", checked: false },
+  { id: "date-8", title: "Silly photobooth strips", desc: "Making the goofiest, weirdest faces together and tucking the printed strip into our phone cases.", checked: false },
+  { id: "date-9", title: "Quiet sunset walk holding hands", desc: "No rush, breathing in the evening air, and you telling me all your random thoughts.", checked: false },
+  { id: "date-10", title: "That food spot you keep sending me reels of", desc: "Dress up, order way too much food, and let you take cute food pictures before we dig in.", checked: false }
 ];
 
-// Photo Album Manifest
+// Photo Album Manifest (Casual, cute captions)
 export const PHOTO_MANIFEST = [
   {
     id: "hero",
     realPath: "assets/photos/couple-hero.jpg",
     placeholderPath: "assets/photos/placeholder-hero.svg",
-    title: "the way you look at me",
-    caption: "My absolute favorite photograph. Whenever I look at this, I remember why everything else in life can wait.",
-    date: "A moment I treasure"
+    title: "my favorite picture of us",
+    caption: "Look at you looking at me. I swear my heart does a whole flip every time i see this. You're so pretty, chicken.",
+    date: "Forever my favorite ♡"
   },
   {
     id: "photo-1",
     realPath: "assets/photos/couple-1.jpg",
     placeholderPath: "assets/photos/placeholder-1.svg",
-    title: "our quiet mornings",
-    caption: "No alarms, tea steaming on the counter, and your head resting on my shoulder. Perfection.",
-    date: "Quiet Mornings"
+    title: "our lazy mornings",
+    caption: "Tea getting cold on the counter, you half-asleep stealing all the blankets, and me just staring at you thinking how did i get so lucky.",
+    date: "My happy place"
   },
   {
     id: "photo-2",
     realPath: "assets/photos/couple-2.jpg",
     placeholderPath: "assets/photos/placeholder-2.svg",
-    title: "your unposed laugh",
-    caption: "I will spend the rest of my life trying to make you laugh exactly like this every single day.",
-    date: "Pure Joy"
+    title: "that big goofy laugh of yours",
+    caption: "This laugh right here. The unposed, loud, scrunchy-nose one. My whole mission in life is just to make you laugh like that every day.",
+    date: "Cutest sound ever"
   },
   {
     id: "photo-3",
     realPath: "assets/photos/couple-3.jpg",
     placeholderPath: "assets/photos/placeholder-3.svg",
-    title: "our little adventure",
-    caption: "Windows down, singing off-key, getting lost and not caring one bit because I was with you.",
-    date: "On The Road"
+    title: "our little road adventures",
+    caption: "Getting lost, singing completely off-key with the windows rolled down, and you giggling at my driving. Wouldn't trade it for anything.",
+    date: "On the road with babe"
   },
   {
     id: "photo-4",
     realPath: "assets/photos/couple-4.jpg",
     placeholderPath: "assets/photos/placeholder-4.svg",
-    title: "being completely silly",
-    caption: "With you, I never have to hide or pretend. We get to be our total, dorky, authentic selves.",
-    date: "Unfiltered Us"
+    title: "just being complete goofballs",
+    caption: "Zero filter, making dumb faces, being total weirdos together. Thank you for letting me be 100% myself with you, pookie.",
+    date: "Certified sillies"
   },
   {
     id: "photo-5",
     realPath: "assets/photos/couple-5.jpg",
     placeholderPath: "assets/photos/placeholder-5.svg",
-    title: "golden hour magic",
-    caption: "The sunlight was beautiful that evening, but honestly, it was just trying to compete with you.",
-    date: "Golden Hour"
+    title: "golden hour with my girl",
+    caption: "The sun was pretty that day but honestly it didn't stand a chance next to you. You were glowing, baccha.",
+    date: "My pretty chicken"
   },
   {
     id: "photo-6",
     realPath: "assets/photos/couple-6.jpg",
     placeholderPath: "assets/photos/placeholder-6.svg",
-    title: "holding your hand",
-    caption: "My favorite place in the whole universe is wherever my hand fits into yours.",
-    date: "Always Beside You"
+    title: "holding your tiny hand",
+    caption: "Your hand fits so perfectly inside mine, it's actually ridiculous. Never letting go, okay? Mwuahh.",
+    date: "Right where you belong"
   }
 ];
 
-// Attach to window as fallback for any legacy access
 if (typeof window !== 'undefined') {
   window.ROMANTIC_CONFIG = ROMANTIC_CONFIG;
   window.REASONS_I_LOVE_YOU = REASONS_I_LOVE_YOU;

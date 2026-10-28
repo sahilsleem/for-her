@@ -95,7 +95,7 @@ function initMusicAndPetalsControls() {
     if (isPlaying) {
       musicToggleBtn.classList.add('playing');
       if (musicIcon) musicIcon.textContent = '🎵';
-      if (musicLabel) musicLabel.textContent = 'playing music ♡';
+      if (musicLabel) musicLabel.textContent = 'playing cute music ♡';
     } else {
       musicToggleBtn.classList.remove('playing');
       if (musicIcon) musicIcon.textContent = '🔇';
@@ -189,7 +189,7 @@ function initOpenWhenLetters() {
     const card = document.createElement('div');
     card.className = 'envelope-card';
     card.innerHTML = `
-      <div class="envelope-stamp">POSTAL LOVE</div>
+      <div class="envelope-stamp">FOR POOKIE</div>
       <div class="envelope-icon">${letter.envelopeIcon}</div>
       <span class="envelope-tag">${letter.tag}</span>
       <h4 class="envelope-title">${letter.title}</h4>
@@ -257,7 +257,7 @@ function initPromiseSeal() {
   const isSealed = localStorage.getItem('romantic_promise_sealed') === 'true';
   if (isSealed && sealStamp) {
     sealStamp.classList.add('sealed');
-    if (sealStatus) sealStatus.textContent = 'sealed with all my love & commitment ♡';
+    if (sealStatus) sealStatus.textContent = 'sealed with all my love, chicken ♡';
     if (sealBtn) sealBtn.textContent = 'promise renewed ♡';
   }
 
@@ -267,9 +267,9 @@ function initPromiseSeal() {
       localStorage.setItem('romantic_promise_sealed', 'true');
 
       if (sealStatus) {
-        sealStatus.textContent = 'sealed with all my love & commitment ♡';
+        sealStatus.textContent = 'sealed with all my love, chicken ♡';
       }
-      sealBtn.textContent = 'promise sealed forever ♡';
+      sealBtn.textContent = 'promise locked in forever ♡';
 
       if (romanticAudio) {
         romanticAudio.playChime();
@@ -354,7 +354,7 @@ function initDateBucketList() {
     });
 
     if (countBadge) {
-      countBadge.textContent = `${selectedCount} memory ideas checked ♡`;
+      countBadge.textContent = `${selectedCount} memories checked with pookie ♡`;
     }
   }
 
@@ -456,7 +456,7 @@ function initPhotoScrapbook() {
                data-fallback="${photo.placeholderPath}" 
                alt="${photo.title}" 
                loading="lazy" />
-          <div class="polaroid-view-badge">tap to zoom ♡</div>
+          <div class="polaroid-view-badge">tap to see pookie ♡</div>
         </div>
         <div class="polaroid-footer">
           <span class="polaroid-title">${photo.title}</span>
@@ -567,13 +567,13 @@ function initFinalActions() {
         romanticAudio.playChime();
       }
 
-      showToast("Sending you the tightest, warmest hug right now... ♡");
+      showToast("sending you the biggest, tightest hug right now... mwuahh ♡");
     });
   }
 
   if (sendTextBtn) {
     sendTextBtn.addEventListener('click', () => {
-      const defaultText = encodeURIComponent("Good morning my love ♡ I just woke up and saw your little surprise... I loved it so much!");
+      const defaultText = encodeURIComponent("good morning my babyyy ♡ i just woke up and saw your surprise... come here and kiss me! mwuahh");
       
       if (ROMANTIC_CONFIG.directSmsNumber) {
         window.location.href = `sms:${ROMANTIC_CONFIG.directSmsNumber}?body=${defaultText}`;
@@ -582,9 +582,9 @@ function initFinalActions() {
       } else {
         // Fallback: celebratory toast & copy message option
         if (navigator.clipboard) {
-          navigator.clipboard.writeText("Good morning my love ♡ I just woke up and saw your little surprise... I loved it so much!").catch(() => {});
+          navigator.clipboard.writeText("good morning my babyyy ♡ i just woke up and saw your surprise... come here and kiss me! mwuahh").catch(() => {});
         }
-        showToast("Text copied to clipboard! Send it to him when you wake up ♡");
+        showToast("text copied to clipboard! send it to your boy when you wake up ♡");
         
         window.dispatchEvent(new CustomEvent('celebrateHearts', {
           detail: { x: window.innerWidth / 2, y: window.innerHeight / 2, count: 25 }
